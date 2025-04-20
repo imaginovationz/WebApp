@@ -1,0 +1,21 @@
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
+function DetailsPage() {
+  const { id } = useParams();
+  const [text, setText] = useState('');
+  const [oldValue, setOldValue] = useState('');
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/api/details/${id}`)
+      .then(response => {
+        setText(response.data.name);
+        setOldValue(response.data.name);
+      })
+      .catch(() => setMessage('Failed to fetch the value.'));
+  }, [id]);
+
+  const handleUpdate = () => {
+    axios.post('http://localhost:5000/api/update', { id, oldValue, newValue: text })

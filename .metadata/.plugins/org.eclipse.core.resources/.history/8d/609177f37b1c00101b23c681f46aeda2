@@ -1,0 +1,81 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+function Home() {
+  const [options, setOptions] = useState([]);
+  const [selected, setSelected] = useState('');
+  const navigate = useNavigate();
+
+  const fetchOptions = () => {
+    axios.get('http://localhost:5000/api/options')
+      .then(response => setOptions(response.data))
+      .catch(error => console.error('Error fetching options:', error));
+  };
+
+  useEffect(() => {
+    fetchOptions();
+  }, []);
+
+  const handleGo = () => {
+    if (selected) {
+      navigate(`/details/${selected}`);
+    }
+  };
+
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h2>Select an Option</h2>
+      <select onChange={e => setSelected(e.target.value)} value={selected}>
+        <option value="">--Select--</option>
+        {options.map(option => (
+          <option key={option} value={option}>{option}</option>
+        ))}
+      </select>
+      <button onClick={handleGo} style={{ marginLeft: '1rem' }}>Go</button>
+      <button onClick={fetchOptions} style={{ marginLeft: '1rem' }}>Refresh From Database</button>
+    </div>
+  );
+}
+
+export default Home;
+
+
+//working code below but not refreshing the data
+/*import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+function Home() {
+  const [options, setOptions] = useState([]);
+  const [selected, setSelected] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/options')
+      .then(response => setOptions(response.data));
+  }, []);
+
+  const handleGo = () => {
+    if (selected) {
+      navigate(`/details/${selected}`);
+    }
+  };
+
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h2>Select an Option</h2>
+      <select onChange={e => setSelected(e.target.value)} value={selected}>
+        <option value="">--Select--</option>
+       
+		 {options.map(option => (
+          <option key={option} value={option}>{option}</option>
+        ))}
+      </select>
+      <button onClick={handleGo} style={{ marginLeft: '1rem' }}>Go</button>
+    </div>
+  );
+}
+
+export default Home;
+*/

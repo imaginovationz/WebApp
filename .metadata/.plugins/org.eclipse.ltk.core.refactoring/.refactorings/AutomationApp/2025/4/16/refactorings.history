@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;AutomationApp/frontend/src/components/DetailsPage.js&apos; to &apos;Details.js&apos;" description="Rename resource &apos;DetailsPage.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="frontend/src/components/DetailsPage.js" name="Details.js" stamp="1745000093428" updateReferences="true"/>
+</session>

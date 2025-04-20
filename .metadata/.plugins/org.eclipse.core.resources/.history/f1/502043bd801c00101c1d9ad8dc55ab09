@@ -1,0 +1,39 @@
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+const Home = () => {
+  const [options, setOptions] = useState([]);
+  const [selectedOption, setSelectedOption] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch options from the backend
+    axios.get('/api/options')
+      .then(response => setOptions(response.data))
+      .catch(error => console.error('Error fetching options:', error));
+  }, []);
+
+  const handleGoClick = () => {
+    if (selectedOption) {
+      navigate(`/details/${selectedOption}`);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
+        <option value="">Select an option</option>
+        {options.map(option => (
+          <option key={option.id} value={option.id}>
+            {option.name}
+          </option>
+        ))}
+      </select>
+      <button onClick={handleGoClick}>Go</button>
+    </div>
+  );
+};
+
+export default Home;

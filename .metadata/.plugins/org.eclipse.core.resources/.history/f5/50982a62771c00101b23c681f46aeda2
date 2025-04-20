@@ -1,0 +1,15 @@
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
+function DetailsPage() {
+  const { value } = useParams();
+
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h2>You selected: {value}</h2>
+      <p>This is the detail page for <strong>{value}</strong>.</p>
+    </div>
+  );
+}
+
+export default DetailsPage;

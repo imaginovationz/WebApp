@@ -1,0 +1,46 @@
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
+function DetailsPage() {
+  const { id } = useParams();
+  const [text, setText] = useState('');
+  const [oldValue, setOldValue] = useState('');
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/api/details/${id}`)
+      .then(response => {
+        setText(response.data.name);
+        setOldValue(response.data.name);
+      })
+      .catch(() => setMessage('Failed to fetch the value.'));
+  }, [id]);
+
+  const handleUpdate = () => {
+    axios.post('http://localhost:5000/api/update', { id, oldValue, newValue: text })
+      .then(() => setMessage('Value updated successfully!'))
+      .catch(() => setMessage('Failed to update the value.'));
+  };
+
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h2>Edit Selected Value</h2>
+      <input
+        type="text"
+        value={text}
+        onChange={e => setText(e.target.value)}
+        style={{ padding: '0.5rem', width: '300px' }}
+      />
+      <button
+        onClick={handleUpdate}
+        style={{ marginLeft: '1rem', padding: '0.5rem 1rem' }}
+      >
+        Update
+      </button>
+      {message && <p style={{ marginTop: '1rem', color: 'green' }}>{message}</p>}
+    </div>
+  );
+}
+
+export default DetailsPage;
