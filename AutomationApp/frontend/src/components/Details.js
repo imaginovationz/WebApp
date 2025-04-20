@@ -36,7 +36,7 @@ function Details() {
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h2>Edit Selected Value</h2>
+      <h2>Edit the Selected Value</h2>
       <input
         type="text"
         value={option}
