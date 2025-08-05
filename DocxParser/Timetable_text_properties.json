@@ -1,0 +1,771 @@
+[
+  {
+    "text": "Sample Paragraph",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Highlight: yellow",
+      "Underline: single"
+    ]
+  },
+  {
+    "text": "Time table",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)"
+    ]
+  },
+  {
+    "text": "Time",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Weekdays ",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Weekends / Off",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "11",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Underline: single"
+    ]
+  },
+  {
+    "text": " – ",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Underline: single"
+    ]
+  },
+  {
+    "text": "4",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Underline: single"
+    ]
+  },
+  {
+    "text": " AM ",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Underline: single"
+    ]
+  },
+  {
+    "text": "(5 hr)",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Underline: single"
+    ]
+  },
+  {
+    "text": "Sleep",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Underline: single"
+    ]
+  },
+  {
+    "text": "Same",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "4 ",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "–",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " 6",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " ",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "AM (2 hr)",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Scriptures reading",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Study/Career",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " [weekends]",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Flute practice",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Same",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "6 – 8 AM (",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "2",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " Hrs)",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "D + M",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Highlight: cyan"
+    ]
+  },
+  {
+    "text": "Wake up",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Freshen up ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Plan office day/Tasks",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Highlight: cyan",
+      "Underline: single"
+    ]
+  },
+  {
+    "text": " ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Highlight: cyan"
+    ]
+  },
+  {
+    "text": "Pooja / Meditation / Yoga / ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Krishn Home school",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Breakfast",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Same",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "8 – ",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "6",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " PM",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " ",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "(",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "10",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " hr)",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "A",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Highlight: cyan"
+    ]
+  },
+  {
+    "text": "-Office",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "-Lunch (12 – 1)",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "-Evening Tea",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Catch up on",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Office ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "RW",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Business: RKS /SMEL/ QuVEC",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Study/Career: ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Flute practice",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "6",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " PM – ",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "9",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " PM (",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "3",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " Hr)",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "K",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Highlight: cyan"
+    ]
+  },
+  {
+    "text": "-Rest, Leisure, Grocery / Shopping / ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "-Home Tasks ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "-Business: RKS /SMEL/ QuVEC",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "-SM",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " / ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Flute",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "-Dinner",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "9",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " –",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " 1",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "1",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " (",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "2",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " hr)",
+    "properties": [
+      "Bold",
+      "Bold (Complex Script)",
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "K",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt",
+      "Highlight: cyan"
+    ]
+  },
+  {
+    "text": "RW",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": " ",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  },
+  {
+    "text": "Same",
+    "properties": [
+      "Italic",
+      "Italic (Complex Script)",
+      "Font Size: 14pt",
+      "Font Size (Complex Script): 14pt"
+    ]
+  }
+]
