@@ -83,5 +83,55 @@ def update_option():
     else:
         return jsonify({'status': 'fail', 'message': 'No matching record found'}), 400
 
+
+
+@app.route('/api/initiatives', methods=['GET'])
+def getInitiative_options():
+    """
+    Fetches all data from the QEInitiatives_Summary table.
+    Returns a JSON response with all rows.
+    """
+    try:
+        conn = get_db_connection()
+        rows = conn.execute('SELECT * FROM QEInitiatives_Summary').fetchall()
+        conn.close()
+        if not rows:
+            return jsonify({'message': 'No data found'}), 404
+        return jsonify([dict(row) for row in rows])  # Convert rows to JSON
+    except Exception as e:
+        print(f"Error fetching initiatives: {e}")
+        return jsonify({'error': 'Failed to fetch initiatives'}), 500
+
+
+@app.route('/api/updateInitiatives', methods=['POST'])
+def updateInitiative_options():
+    """
+    Updates the data in the QEInitiatives_Summary table based on the received JSON payload.
+    Expects a list of initiatives with updated values.
+    """
+    data = request.json.get('initiatives', [])
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    for initiative in data:
+        cursor.execute('''
+            UPDATE QEInitiatives_Summary
+            SET InitiativeName = ?, InitiativeDescription = ?, InitiativeStatus = ?, InitiativeCommentary = ?
+            WHERE InitiativeID = ?
+        ''', (
+            initiative['InitiativeName'],
+            initiative['InitiativeDescription'],
+            initiative['InitiativeStatus'],
+            initiative['InitiativeCommentary'],
+            #initiative['id']
+            initiative['InitiativeID']  # Use InitiativeId as the p
+        ))
+
+    conn.commit()
+    conn.close()
+    return jsonify({'status': 'success', 'message': 'Initiatives updated successfully'})
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)

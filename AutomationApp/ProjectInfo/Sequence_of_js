@@ -1,0 +1,49 @@
+1. `index.js`
+
+	•  Purpose: This is the entry point of the React application. It renders the root component (App.js) into the DOM.
+	•  Sequence: It initializes the application and sets up the React environment.
+	•  Example: When the application starts, index.js renders the App component, which contains the routing logic.
+	
+	
+	
+2. `App.js`
+
+	•  Purpose: This file defines the routing for the application using react-router-dom. It determines which component (Home or Details) to render based on the URL.
+	•  Sequence: After index.js, App.js renders the appropriate component based on the route.
+	•  Example:
+		•  When the user visits /, the Home component is rendered.
+		•  When the user navigates to /details/:id, the Details component is rendered.
+		
+		
+		
+3. `Home.js`
+
+	•  Purpose: This file displays a list of options fetched from the backend and allows the user to select one. It also provides navigation to the Details page.
+	•  Sequence: When the user visits /, Home.js is rendered. It fetches the options and displays them in a dropdown.
+	•  Example:
+		•  The user selects an option and clicks "Go," which navigates to /details/:id (e.g., /details/1).
+		
+		
+4. `Details.js`
+
+	•  Purpose: This file fetches the details of the selected option and allows the user to update it. 
+	It also sends the updated value to the backend.
+
+Example
+When the user navigates to /details/:id, Details.js is rendered. It fetches the details of the selected option and displays an input field for editing.
+•  When The user edits the value and clicks "Update." A POST request is sent to the backend to update the option. After a successful update, the user is redirected back to / (the Home page).
+Example Flow for Updating Options:
+
+	1. User visits `/`:
+	2. index.js renders App.js.
+	3. App.js renders Home.js.
+	4. Home.js fetches and displays the list of options.
+	5. User selects an option and clicks "Go":
+	6. Home.js navigates to /details/:id (e.g., /details/1).
+	7. User edits the option on `/details/:id`:
+	8. Details.js fetches the details of the selected option.
+	9. The user updates the value and clicks "Update."
+	10. A POST request is sent to the backend to update the option.
+	11. After the update, the user is redirected back to /.
+	12. User sees the updated list on `/`:
+	13. Home.js fetches the updated list of options from the backend.
