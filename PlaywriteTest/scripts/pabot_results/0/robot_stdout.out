@@ -1,0 +1,21 @@
+==============================================================================
+PWTest                                                                        
+==============================================================================
+Open Browser And Search                                               | PASS |
+------------------------------------------------------------------------------
+Open Browser And Search Parallel                                        
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\ernig\eclipse-workspace\PlaywriteTest\scripts\PWTest.robot:25
+    T:  Open Browser And Search Parallel    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\ernig\eclipse-workspace\PlaywriteTest\scripts\PWTest.robot:35
+      Fill Text    //*[@id="APjFqb"]    Parallel    Execution with Playwright
+______________________________________________________________________________
+| FAIL |
+'str' object cannot be interpreted as an integer
+------------------------------------------------------------------------------
+PWTest                                                                | FAIL |
+2 tests, 1 passed, 1 failed
+==============================================================================
+Output:  C:\Users\ernig\eclipse-workspace\PlaywriteTest\scripts\pabot_results\0\output.xml

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.3 on win32)" generated="2025-08-02T22:33:49.092854" rpa="false" schemaversion="5">
+<suite id="s1" name="PWTest" source="C:\Users\ernig\eclipse-workspace\PlaywriteTest\scripts\PWTest.robot">
+<test id="s1-t1" name="Open Browser And Search" line="10">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-02T22:33:49.387082" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ernig\\eclipse-workspace\\PlaywriteTest\\scripts\\pabot_results\\0\\browser\\traces\\temp\\36628107-a84a-47b2-a7b0-2f8b8f355611"}</msg>
+<msg time="2025-08-02T22:33:49.411285" level="INFO">Starting Browser process C:\Users\ernig\AppData\Roaming\Python\Python311\site-packages\Browser\wrapper\index.js using at 127.0.0.1:60531</msg>
+<msg time="2025-08-02T22:33:50.878979" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ernig\\eclipse-workspace\\PlaywriteTest\\scripts\\pabot_results\\0\\browser\\traces\\temp\\36628107-a84a-47b2-a7b0-2f8b8f355611"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-02T22:33:49.386082" elapsed="1.494414"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-08-02T22:33:50.883710" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-08-02T22:33:50.920481" level="INFO">Successfully created context. </msg>
+<msg time="2025-08-02T22:33:50.920481" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-08-02T22:33:50.880496" elapsed="0.039985"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-02T22:33:51.142599" level="INFO">Successfully initialized new page object and opened url: about:blank</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-02T22:33:50.921486" elapsed="0.221113"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2025-08-02T22:33:51.848060" level="INFO">Successfully opened URL https://www.google.com</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-08-02T22:33:51.143594" elapsed="0.704466"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-08-02T22:33:52.006580" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../PlaywriteTest/results/TC001_Search/step1_google_home.png.png" target="_blank"&gt;&lt;img src="../../PlaywriteTest/results/TC001_Search/step1_google_home.png.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>${RESULTS_DIR}TC001_Search/step1_google_home.png</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-08-02T22:33:51.848060" elapsed="0.158520"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-02T22:33:52.007580" level="INFO">Clicks the element 'xpath=//button[.//div[text()='Accept all'] or .//span[text()='I agree']]'.</msg>
+<msg time="2025-08-02T22:34:02.139598" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-02T22:34:02.139598" level="INFO">See also file:///C:/Users/ernig/eclipse-workspace/PlaywriteTest/scripts/pabot_results/0/playwright-log.txt for additional details.</msg>
+<msg time="2025-08-02T22:34:02.139598" level="FAIL">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//button[.//div[text()=\'Accept all\'] or .//span[text()=\'I agree\']]')
+</msg>
+<arg>xpath=//button[.//div[text()='Accept all'] or .//span[text()='I agree']]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-08-02T22:33:52.007580" elapsed="10.136418">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//button[.//div[text()=\'Accept all\'] or .//span[text()=\'I agree\']]')
+</status>
+</kw>
+<arg>Click</arg>
+<arg>xpath=//button[.//div[text()='Accept all'] or .//span[text()='I agree']]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-08-02T22:33:52.006580" elapsed="10.137418"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-02T22:34:02.145349" level="INFO">Fills the text 'Robot Framework Playwright' in the given field.</msg>
+<arg>//*[@id="APjFqb"]</arg>
+<arg>Robot Framework Playwright</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-02T22:34:02.143998" elapsed="0.026864"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>//*[@id="APjFqb"]</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-02T22:34:02.170862" elapsed="0.120172"/>
+</kw>
+<status status="PASS" start="2025-08-02T22:33:49.385082" elapsed="12.905952"/>
+</test>
+<test id="s1-t2" name="Open Browser And Search Parallel" line="25">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-02T22:34:02.296339" level="INFO">Switching browser to browser=27f8b3b1-db62-464a-a5cb-b73638c1dced</msg>
+<msg time="2025-08-02T22:34:02.302447" level="INFO">Successfully changed active browser: browser=27f8b3b1-db62-464a-a5cb-b73638c1dced</msg>
+<msg time="2025-08-02T22:34:02.302447" level="INFO">Reusing existing browser with id: browser=27f8b3b1-db62-464a-a5cb-b73638c1dced</msg>
+<arg>browser=chromium</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-02T22:34:02.295033" elapsed="0.007414"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-08-02T22:34:02.304443" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2025-08-02T22:34:02.317156" level="INFO">Successfully created context. </msg>
+<msg time="2025-08-02T22:34:02.317156" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-08-02T22:34:02.303436" elapsed="0.013720"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-02T22:34:02.473439" level="INFO">Successfully initialized new page object and opened url: about:blank</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-02T22:34:02.317156" elapsed="0.156283"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2025-08-02T22:34:03.115439" level="INFO">Successfully opened URL https://www.google.com</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-08-02T22:34:02.474440" elapsed="0.640999"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-08-02T22:34:03.236875" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../PlaywriteTest/results/TC001_Search/step1_google_home.png.png" target="_blank"&gt;&lt;img src="../../PlaywriteTest/results/TC001_Search/step1_google_home.png.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<arg>${RESULTS_DIR}TC001_Search/step1_google_home.png</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-08-02T22:34:03.116435" elapsed="0.121934"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-02T22:34:03.239370" level="INFO">Clicks the element 'xpath=//button[.//div[text()='Accept all'] or .//span[text()='I agree']]'.</msg>
+<msg time="2025-08-02T22:34:13.369730" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-02T22:34:13.369730" level="INFO">See also file:///C:/Users/ernig/eclipse-workspace/PlaywriteTest/scripts/pabot_results/0/playwright-log.txt for additional details.</msg>
+<msg time="2025-08-02T22:34:13.369730" level="FAIL">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//button[.//div[text()=\'Accept all\'] or .//span[text()=\'I agree\']]')
+</msg>
+<arg>xpath=//button[.//div[text()='Accept all'] or .//span[text()='I agree']]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2025-08-02T22:34:03.238369" elapsed="10.132895">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//button[.//div[text()=\'Accept all\'] or .//span[text()=\'I agree\']]')
+</status>
+</kw>
+<arg>Click</arg>
+<arg>xpath=//button[.//div[text()='Accept all'] or .//span[text()='I agree']]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-08-02T22:34:03.238369" elapsed="10.132895"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-02T22:34:13.372300" level="INFO">Fills the text 'Parallel' in the given field.</msg>
+<msg time="2025-08-02T22:34:13.478797" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-02T22:34:13.480153" level="INFO">See also file:///C:/Users/ernig/eclipse-workspace/PlaywriteTest/scripts/pabot_results/0/playwright-log.txt for additional details.</msg>
+<msg time="2025-08-02T22:34:13.480153" level="FAIL">'str' object cannot be interpreted as an integer</msg>
+<arg>//*[@id="APjFqb"]</arg>
+<arg>Parallel</arg>
+<arg>Execution with Playwright</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="FAIL" start="2025-08-02T22:34:13.372300" elapsed="0.108848">'str' object cannot be interpreted as an integer</status>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>//*[@id="APjFqb"]</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-08-02T22:34:13.481148" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-08-02T22:34:02.295033" elapsed="11.186115">'str' object cannot be interpreted as an integer</status>
+</test>
+<status status="FAIL" start="2025-08-02T22:33:49.110861" elapsed="24.373286"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="PWTest" id="s1" pass="1" fail="1" skip="0">PWTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

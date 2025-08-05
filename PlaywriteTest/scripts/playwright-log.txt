@@ -1,0 +1,50 @@
+{"level":30,"time":"2025-08-03T02:12:09.311Z","pid":57516,"hostname":"ShobhaNigam","msg":"Listening on 127.0.0.1:59346"}
+(node:57516) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-08-03T02:12:09.498Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-08-03T02:12:09.798Z","pid":57516,"hostname":"ShobhaNigam","msg":"Adding browser to stack: chromium, version: 139.0.7258.5"}
+{"level":30,"time":"2025-08-03T02:12:09.799Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-08-03T02:12:09.799Z","pid":57516,"hostname":"ShobhaNigam","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-08-03T02:12:09.811Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method newContext"}
+{"level":30,"time":"2025-08-03T02:12:09.812Z","pid":57516,"hostname":"ShobhaNigam","msg":"Creating new context with options: {\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"height\":720,\"width\":1280}}"}
+{"level":30,"time":"2025-08-03T02:12:09.812Z","pid":57516,"hostname":"ShobhaNigam","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@24bdf6fe8ae20db3af825f9b3910b384\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=8165f8ec-a1ca-4d4a-8c77-6cd5b6c9ef64\"}"}
+{"level":30,"time":"2025-08-03T02:12:09.813Z","pid":57516,"hostname":"ShobhaNigam","msg":"Trace file: "}
+{"level":30,"time":"2025-08-03T02:12:09.835Z","pid":57516,"hostname":"ShobhaNigam","msg":"Setting default timeout for context context=0d86bf89-0ba9-4f17-92bc-c4335c34fb47 to 10000"}
+{"level":30,"time":"2025-08-03T02:12:09.836Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method newContext"}
+{"level":30,"time":"2025-08-03T02:12:09.836Z","pid":57516,"hostname":"ShobhaNigam","msg":"Changed active context: context=0d86bf89-0ba9-4f17-92bc-c4335c34fb47"}
+{"level":30,"time":"2025-08-03T02:12:09.842Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-08-03T02:12:09.842Z","pid":57516,"hostname":"ShobhaNigam","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@24bdf6fe8ae20db3af825f9b3910b384\"},\"headless\":false,\"_contextStack\":[{\"id\":\"context=0d86bf89-0ba9-4f17-92bc-c4335c34fb47\",\"c\":{\"_type\":\"BrowserContext\",\"_guid\":\"browser-context@aab3624c272dd3b70a70d4e72a214cb9\"},\"pageStack\":[],\"options\":{\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"height\":720,\"width\":1280}},\"traceFile\":\"\"}],\"id\":\"browser=8165f8ec-a1ca-4d4a-8c77-6cd5b6c9ef64\"}"}
+{"level":30,"time":"2025-08-03T02:12:10.051Z","pid":57516,"hostname":"ShobhaNigam","msg":"Video path: undefined"}
+{"level":30,"time":"2025-08-03T02:12:10.051Z","pid":57516,"hostname":"ShobhaNigam","msg":"Changed active page"}
+{"level":30,"time":"2025-08-03T02:12:10.072Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method newPage"}
+{"level":30,"time":"2025-08-03T02:12:10.077Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method goTo"}
+{"level":30,"time":"2025-08-03T02:12:10.840Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method goTo"}
+{"level":30,"time":"2025-08-03T02:12:10.847Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-08-03T02:12:10.847Z","pid":57516,"hostname":"ShobhaNigam","Take screenshot with options: ":{"path":"C:\\Users\\ernig\\eclipse-workspace\\PlaywriteTest\\scripts\\browser\\screenshot\\..\\..\\..\\..\\PlaywriteTest\\results\\TC001_Search\\step1_google_home.png.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-08-03T02:12:10.976Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-08-03T02:12:10.982Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method click"}
+{"level":30,"time":"2025-08-03T02:12:10.982Z","pid":57516,"hostname":"ShobhaNigam","msg":"Strict mode is enabled, find Locator with xpath=//button[.//div[text()='Accept all'] or .//span[text()='I agree']] in page."}
+{"level":30,"time":"2025-08-03T02:12:20.999Z","pid":57516,"hostname":"ShobhaNigam","msg":"Error of node method  click"}
+================= Original suppressed error =================
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('//button[.//div[text()=\'Accept all\'] or .//span[text()=\'I agree\']]')[22m
+
+    at internalClick (C:\Users\ernig\AppData\Roaming\Python\Python311\site-packages\Browser\wrapper\index.js:11893:19)
+    at async click (C:\Users\ernig\AppData\Roaming\Python\Python311\site-packages\Browser\wrapper\index.js:11874:18)
+    at async PlaywrightServer.click (C:\Users\ernig\AppData\Roaming\Python\Python311\site-packages\Browser\wrapper\index.js:13137:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2025-08-03T02:12:21.005Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-08-03T02:12:21.005Z","pid":57516,"hostname":"ShobhaNigam","Take screenshot with options: ":{"path":"C:\\Users\\ernig\\eclipse-workspace\\PlaywriteTest\\scripts\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-08-03T02:12:21.138Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-08-03T02:12:21.164Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-08-03T02:12:21.164Z","pid":57516,"hostname":"ShobhaNigam","msg":"Strict mode is enabled, find Locator with //*[@id=\"APjFqb\"] in page."}
+{"level":30,"time":"2025-08-03T02:12:21.189Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method fillText"}
+{"level":30,"time":"2025-08-03T02:12:21.197Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method press"}
+{"level":30,"time":"2025-08-03T02:12:21.197Z","pid":57516,"hostname":"ShobhaNigam","msg":"Strict mode is enabled, find Locator with //*[@id=\"APjFqb\"] in page."}
+{"level":30,"time":"2025-08-03T02:12:21.864Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method press"}
+{"level":30,"time":"2025-08-03T02:12:21.932Z","pid":57516,"hostname":"ShobhaNigam","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-08-03T02:12:21.959Z","pid":57516,"hostname":"ShobhaNigam","msg":"Removed page=a19aabcc-7f39-4fd1-afb2-b69703e16e46 from context=0d86bf89-0ba9-4f17-92bc-c4335c34fb47 page stack"}
+{"level":30,"time":"2025-08-03T02:12:22.283Z","pid":57516,"hostname":"ShobhaNigam","msg":"End of node method closeAllBrowsers"}
