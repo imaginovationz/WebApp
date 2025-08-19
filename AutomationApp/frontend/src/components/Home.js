@@ -13,28 +13,35 @@ function Home() {
   const navigate = useNavigate();
 
  //Defines a function fetchOptions to fetch the list of options from the backend API.
-  const fetchOptions = () => {
-
+  
+ 
+ const fetchOptions = () => {
 // Makes a GET request to the backend API /api/options endpoint of the backend  to list of retrieve options.
    axios.get('http://localhost:5000/api/options')
       .then(res => setOptions(res.data)) //Updates the options state with the data received from the API response.
       .catch(err => console.error(err)); //  Updates the options state with the data received from the API response.
 	 	      
   };
-
   useEffect(() => {
     fetchOptions();
   }, []);
 
+  
   const handleGo = () => {
     if (selectedId) navigate(`/details/${selectedId}`);
   };
 
+  
   const handleQEInitiatives = () => {
      navigate('/summary'); // Navigate to the Summary.js component
    };
    
-   
+   const ProjectROI = () => {
+     navigate('/ProjectROI'); // Navigate to the ProjectROI.js component
+   };
+    
+	
+      
   return ( //Starts the JSX to render the component's UI.
     <div style={{ padding: '2rem' }}> 
 	//Creates a div with padding for the component's layout. 
@@ -51,6 +58,8 @@ function Home() {
       <button onClick={handleGo} style={{ marginLeft: '1rem' }}>Go</button>
       <button onClick={fetchOptions} style={{ marginLeft: '1rem' }}>Refresh</button>
       <button onClick={handleQEInitiatives} style={{ marginLeft: '1rem' }}>QEInitiatives</button>
+	  <button onClick={ProjectROI} style={{ marginLeft: '1rem' }}>Project ROI</button>
+	  
 	</div>
   );
 }

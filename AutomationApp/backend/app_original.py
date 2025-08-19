@@ -1,14 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
-import mysql.connector
-
-from SQL_Initiatives import (  
-    GET_ALL_OPTIONS, GET_OPTION_BY_ID, UPDATE_OPTION,
-    GET_ALL_INITIATIVES, UPDATE_INITIATIVE
-)
-#from pyarrow._flight import endpoints
-
 
 app = Flask(__name__)
 CORS(app)
@@ -34,12 +26,12 @@ def get_options():
     """
     
     conn = get_db_connection()
-    rows = conn.execute(GET_ALL_OPTIONS).fetchall()
+    rows = conn.execute('SELECT id, options FROM options').fetchall()
     conn.close()
     return jsonify([{'id': row['id'], 'options': row['options']} for row in rows])
 
-
 @app.route('/api/details/<int:option_id>', methods=['GET'])
+
 def get_option_details(option_id):
     """
     1. HTTP GET endpoint at /api/details/<int:option_id>.
@@ -49,7 +41,7 @@ def get_option_details(option_id):
     """
     
     conn = get_db_connection()
-    row = conn.execute(GET_OPTION_BY_ID, (option_id,)).fetchone()
+    row = conn.execute('SELECT id, options FROM options WHERE id = ?', (option_id,)).fetchone()
     conn.close() 
     if row:
         return jsonify({'id': row['id'], 'options': row['options']})
@@ -57,8 +49,8 @@ def get_option_details(option_id):
         return jsonify({'error': 'Option not found'}), 404
 
 
-
 @app.route('/api/update', methods=['POST'])
+
 def update_option():
     """
     1. HTTP POST endpoint at /api/update.
@@ -77,7 +69,11 @@ def update_option():
 	
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute(UPDATE_OPTION, (new_value, option_id, old_value))
+    cursor.execute('''
+        UPDATE options
+        SET options = ?
+        WHERE id = ? AND options = ?
+    ''', (new_value, option_id, old_value))
     conn.commit()
     updated = cursor.rowcount
     conn.close()
@@ -88,7 +84,6 @@ def update_option():
         return jsonify({'status': 'fail', 'message': 'No matching record found'}), 400
 
 
-#INITIATIVES END POINTS    
 
 @app.route('/api/initiatives', methods=['GET'])
 def getInitiative_options():
@@ -98,7 +93,7 @@ def getInitiative_options():
     """
     try:
         conn = get_db_connection()
-        rows = conn.execute(GET_ALL_INITIATIVES).fetchall()
+        rows = conn.execute('SELECT * FROM QEInitiatives_Summary').fetchall()
         conn.close()
         if not rows:
             return jsonify({'message': 'No data found'}), 404
@@ -119,7 +114,11 @@ def updateInitiative_options():
     cursor = conn.cursor()
 
     for initiative in data:
-        cursor.execute(UPDATE_INITIATIVE, (
+        cursor.execute('''
+            UPDATE QEInitiatives_Summary
+            SET InitiativeName = ?, InitiativeDescription = ?, InitiativeStatus = ?, InitiativeCommentary = ?
+            WHERE InitiativeID = ?
+        ''', (
             initiative['InitiativeName'],
             initiative['InitiativeDescription'],
             initiative['InitiativeStatus'],
@@ -131,108 +130,6 @@ def updateInitiative_options():
     conn.commit()
     conn.close()
     return jsonify({'status': 'success', 'message': 'Initiatives updated successfully'})
-
-
-#PROJECT ROI END POINTS
-
-
-@app.route('/api/projectroi/<int:project_id>', methods=['GET'])
-def getProjectROI(project_id):
-    """
-    Fetch ROI data for a given project_id from projectroi table.
-    """
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        query = "SELECT * FROM projectroi WHERE intake_number = ?"
-        rows = cursor.execute(query, (project_id,)).fetchall()
-        conn.close()
-        if not rows:
-            return jsonify({'message': 'No ROI data found for this project'}), 404
-        return jsonify([dict(row) for row in rows])
-    except Exception as e:
-        print(f"Error fetching ROI: {e}")
-        return jsonify({'error': 'Failed to fetch ROI data'}), 500
-
-
-@app.route('/api/projectroiupdate', methods=['POST'])
-def updateProjectROI():
-    """
-    Update ROI data for a project in projectroi table.
-    Expects JSON payload with ROI fields.
-    """
-    try:
-        data = request.json
-        project_id = data.get('project_id')
-
-        conn = get_db_connection()
-        cursor = conn.cursor()
-
-        update_query = """
-        UPDATE projectroi
-        SET FY = ?, ROIReportingQr = ?, ROIReportingMonth = ?, Portfolio = ?,
-            Application = ?, Amount = ?, AutomationFramework = ?, TransformationInitiative = ?,
-            FP = ?, DealCount = ?, TestCaseDesign = ?, TestUpdated = ?, TestCaseExecuted = ?,
-            ROISheet = ?, Lead = ?, Comment = ?
-        WHERE project_id = ?
-        """
-
-        cursor.execute(update_query, (
-            data.get('FY'),
-            data.get('ROIReportingQr'),
-            data.get('ROIReportingMonth'),
-            data.get('Portfolio'),
-            data.get('Application'),
-            data.get('Amount'),
-            data.get('AutomationFramework'),
-            data.get('TransformationInitiative'),
-            data.get('FP'),
-            data.get('DealCount'),
-            data.get('TestCaseDesign'),
-            data.get('TestUpdated'),
-            data.get('TestCaseExecuted'),
-            data.get('ROISheet'),
-            data.get('Lead'),
-            data.get('Comment'),
-            project_id
-        ))
-
-        conn.commit()
-        updated = cursor.rowcount
-        conn.close()
-
-        if updated:
-            return jsonify({'status': 'success', 'message': 'ROI data updated successfully'})
-        else:
-            return jsonify({'status': 'fail', 'message': 'No matching project found'}), 400
-    except Exception as e:
-        print(f"Error updating ROI: {e}")
-        return jsonify({'error': 'Failed to update ROI data'}), 500
-
-
-
-@app.route('/api/projects', methods=['GET'])
-def get_projects():
-    """
-    Fetch all projects from 'projects' table (intake_number + intake_name).
-    """
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        query = "SELECT intake_number, intake_name FROM projects"
-        rows = cursor.execute(query).fetchall()
-        conn.close()
-
-        if not rows:
-            return jsonify({'message': 'No projects found'}), 404
-
-        # Convert rows to JSON list of dicts
-        project_list = [dict(row) for row in rows]
-        return jsonify(project_list)
-
-    except Exception as e:
-        print(f"Error fetching projects: {e}")
-        return jsonify({'error': 'Failed to fetch projects'}), 500
 
 
 

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import PptxGenJS from 'pptxgenjs'; //to download data as ppt
+import * as XLSX from 'xlsx'; // to download as excel
 
 const Summary = () => {
   const [initiatives, setInitiatives] = useState([]);
@@ -6,6 +8,10 @@ const Summary = () => {
   const [error, setError] = useState(null);
   const [isEditable, setIsEditable] = useState(false);
 
+  
+  
+  //INITIATIVES SECTION
+  
   // Fetch data from the API
   useEffect(() => {
     const fetchInitiatives = async () => {
@@ -33,7 +39,7 @@ const Summary = () => {
     setInitiatives(updatedInitiatives);
   };
 
-  // Handle save
+    // Handle save
   const handleSave = async () => {
     try {
       const response = await fetch('http://localhost:5000/api/updateInitiatives', {
@@ -51,6 +57,60 @@ const Summary = () => {
     }
   };
 
+   
+  
+  //BUTTONS  
+  const downloadAsPPT = () => {
+    const pptx = new PptxGenJS();
+    const slide = pptx.addSlide();
+
+    // Add title to the slide
+    slide.addText('QE Initiatives Summary', { x: 0.5, y: 0.5, fontSize: 18, bold: true });
+
+    // Add table data
+    const tableData = [
+      ['Initiative Name', 'Description', 'Status', 'Commentary'], // Table headers
+      ...initiatives.map((initiative) => [
+        initiative.InitiativeName || '',
+        initiative.InitiativeDescription || '',
+        initiative.InitiativeStatus || '',
+        initiative.InitiativeCommentary || '',
+      ]),
+    ];
+
+    slide.addTable(tableData, {
+      x: 0.5,
+      y: 1.5,
+      w: 9,
+      border: { pt: 1, color: '000000' },
+      fontSize: 12,
+    });
+
+    // Save the PowerPoint file
+    pptx.writeFile('QE_Initiatives_Summary');
+  };
+  
+  
+  const downloadAsExcel = () => {
+    const wsData = [
+      ['Initiative Name', 'Initiative Description', 'Initiative Status', 'Initiative Commentary'],
+      ...initiatives.map((i) => [
+        i.InitiativeName || '',
+        i.InitiativeDescription || '',
+        i.InitiativeStatus || '',
+        i.InitiativeCommentary || '',
+      ])
+    ];
+
+    const worksheet = XLSX.utils.aoa_to_sheet(wsData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'QE Initiatives');
+
+    XLSX.writeFile(workbook, 'QE_Initiatives_Summary.xlsx');
+  };
+  
+  
+  
   // Render UI
   return (
     <div style={{ padding: '2rem' }}>
@@ -114,6 +174,15 @@ const Summary = () => {
       <button onClick={() => setIsEditable(true)} style={{ marginTop: '1rem' }}>
         Edit
       </button>
+	  
+	  <button
+	    onClick={() => setIsEditable(false)}
+	    style={{ marginTop: '1rem', marginLeft: '0.5rem' }}
+	  >
+	    Cancel Edit
+	  </button>
+
+	  	  
       <button
         onClick={handleSave}
         style={{ marginTop: '1rem', marginLeft: '1rem' }}
@@ -121,6 +190,22 @@ const Summary = () => {
       >
         Save
       </button>
+	  
+	  <button
+	         onClick={downloadAsPPT}
+	         style={{ marginTop: '1rem', marginLeft: '1rem' }}
+	       >
+	         Download as PPT
+	       </button>
+	  
+		   <button
+		         onClick={downloadAsExcel}
+		         style={{ marginTop: '1rem', marginLeft: '1rem' }}
+		       >
+		         Download as Excel
+		       </button>
+		   
+		   
     </div>
   );
 };
