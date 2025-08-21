@@ -11,8 +11,9 @@ UPDATE_OPTION = """
 
 # QEInitiatives_Summary table queries
 GET_ALL_INITIATIVES = "SELECT * FROM QEInitiatives_Summary"
+
 UPDATE_INITIATIVE = """
     UPDATE QEInitiatives_Summary
-    SET InitiativeName = ?, InitiativeDescription = ?, InitiativeStatus = ?, InitiativeCommentary = ?
+    SET IniName = ?, InitiativeDescription = ?, InitiativeStatus = ?, InitiativeCommentary = ?,CumulativeROI = ?
     WHERE InitiativeID = ?
 """

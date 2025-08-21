@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+//import ProjectROIEntry from './ROI/ProjectROIEntry';
+
 
 function Home() {
 //Declares a state variable options (an array) to store the list of options fetched from the backend, with setOptions as its updater function.	
@@ -33,23 +35,32 @@ function Home() {
 
   
   const handleQEInitiatives = () => {
-     navigate('/summary'); // Navigate to the Summary.js component
+	navigate('/QEInitiatives/Summary'); 
+	//navigate('/summary'); // Navigate to the Summary.js component
    };
    
+
+
    const ProjectROI = () => {
-     navigate('/ProjectROI'); // Navigate to the ProjectROI.js component
+     navigate('/ROI/ProjectROI');
+	 //navigate('/ProjectROI'); // Navigate to the ProjectROI.js component
    };
     
 	
-      
+   const ProjectLeadROIEntry = () => {
+       navigate('/ROI/ProjectLeadROIEntry/:intakeNumber');
+    //navigate('/ProjectROI'); // Navigate to the ProjectROI.js component
+     };
+	 
+	     
   return ( //Starts the JSX to render the component's UI.
     <div style={{ padding: '2rem' }}> 
-	//Creates a div with padding for the component's layout. 
+	
     
-	  <h2>Select an Option</h2> //Displays a heading for the component.
+	  <h2>Select an Option</h2> 
     
 	    <select value={selectedId} onChange={e => setSelectedId(e.target.value)}>
-        <option value="">-- Select --</option> // Renders a dropdown select element with an initial option prompting the user to select an option.
+        <option value="">-- Select --</option> 
         {options.map(opt => (
           <option key={opt.id} value={opt.id}>{opt.options}</option> //
         ))}
@@ -59,6 +70,7 @@ function Home() {
       <button onClick={fetchOptions} style={{ marginLeft: '1rem' }}>Refresh</button>
       <button onClick={handleQEInitiatives} style={{ marginLeft: '1rem' }}>QEInitiatives</button>
 	  <button onClick={ProjectROI} style={{ marginLeft: '1rem' }}>Project ROI</button>
+	  <button onClick={ProjectLeadROIEntry} style={{ marginLeft: '1rem' }}>Project ROI Entry</button>
 	  
 	</div>
   );

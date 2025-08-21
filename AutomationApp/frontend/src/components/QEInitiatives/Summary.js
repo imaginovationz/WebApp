@@ -8,10 +8,6 @@ const Summary = () => {
   const [error, setError] = useState(null);
   const [isEditable, setIsEditable] = useState(false);
 
-  
-  
-  //INITIATIVES SECTION
-  
   // Fetch data from the API
   useEffect(() => {
     const fetchInitiatives = async () => {
@@ -21,7 +17,7 @@ const Summary = () => {
           throw new Error('Failed to fetch initiatives');
         }
         const data = await response.json();
-        setInitiatives(data);
+        setInitiatives(data.initiatives); // expects fields: InitiativeName, InitiativeDescription, etc.
       } catch (err) {
         setError(err.message);
       } finally {
@@ -39,7 +35,7 @@ const Summary = () => {
     setInitiatives(updatedInitiatives);
   };
 
-    // Handle save
+  // Handle save
   const handleSave = async () => {
     try {
       const response = await fetch('http://localhost:5000/api/updateInitiatives', {
@@ -57,9 +53,7 @@ const Summary = () => {
     }
   };
 
-   
-  
-  //BUTTONS  
+  // Download as PPT
   const downloadAsPPT = () => {
     const pptx = new PptxGenJS();
     const slide = pptx.addSlide();
@@ -69,12 +63,13 @@ const Summary = () => {
 
     // Add table data
     const tableData = [
-      ['Initiative Name', 'Description', 'Status', 'Commentary'], // Table headers
+      ['Initiative Name', 'Description', 'Status', 'Commentary', 'Cumulative ROI'], // Table headers
       ...initiatives.map((initiative) => [
         initiative.InitiativeName || '',
         initiative.InitiativeDescription || '',
         initiative.InitiativeStatus || '',
         initiative.InitiativeCommentary || '',
+        initiative.CumulativeROI || '',
       ]),
     ];
 
@@ -89,16 +84,17 @@ const Summary = () => {
     // Save the PowerPoint file
     pptx.writeFile('QE_Initiatives_Summary');
   };
-  
-  
+
+  // Download as Excel
   const downloadAsExcel = () => {
     const wsData = [
-      ['Initiative Name', 'Initiative Description', 'Initiative Status', 'Initiative Commentary'],
+      ['Initiative Name', 'Initiative Description', 'Initiative Status', 'Initiative Commentary', 'Cumulative ROI'], // Headers
       ...initiatives.map((i) => [
         i.InitiativeName || '',
         i.InitiativeDescription || '',
         i.InitiativeStatus || '',
         i.InitiativeCommentary || '',
+        i.CumulativeROI || '',
       ])
     ];
 
@@ -108,9 +104,7 @@ const Summary = () => {
 
     XLSX.writeFile(workbook, 'QE_Initiatives_Summary.xlsx');
   };
-  
-  
-  
+
   // Render UI
   return (
     <div style={{ padding: '2rem' }}>
@@ -125,11 +119,12 @@ const Summary = () => {
               <th>Initiative Description</th>
               <th>Initiative Status</th>
               <th>Initiative Commentary</th>
+              <th>Cumulative ROI</th>
             </tr>
           </thead>
           <tbody>
             {initiatives.map((initiative, index) => (
-              <tr key={initiative.id || index}>
+              <tr key={initiative.InitiativeID || index}>
                 <td>
                   <input
                     type="text"
@@ -166,6 +161,16 @@ const Summary = () => {
                     }
                   />
                 </td>
+                <td>
+                  <input
+                    type="text"
+                    value={initiative.CumulativeROI || ''}
+                    disabled={!isEditable}
+                    onChange={(e) =>
+                      handleInputChange(e, index, 'CumulativeROI')
+                    }
+                  />
+                </td>
               </tr>
             ))}
           </tbody>
@@ -174,15 +179,12 @@ const Summary = () => {
       <button onClick={() => setIsEditable(true)} style={{ marginTop: '1rem' }}>
         Edit
       </button>
-	  
-	  <button
-	    onClick={() => setIsEditable(false)}
-	    style={{ marginTop: '1rem', marginLeft: '0.5rem' }}
-	  >
-	    Cancel Edit
-	  </button>
-
-	  	  
+      <button
+        onClick={() => setIsEditable(false)}
+        style={{ marginTop: '1rem', marginLeft: '0.5rem' }}
+      >
+        Cancel Edit
+      </button>
       <button
         onClick={handleSave}
         style={{ marginTop: '1rem', marginLeft: '1rem' }}
@@ -190,22 +192,18 @@ const Summary = () => {
       >
         Save
       </button>
-	  
-	  <button
-	         onClick={downloadAsPPT}
-	         style={{ marginTop: '1rem', marginLeft: '1rem' }}
-	       >
-	         Download as PPT
-	       </button>
-	  
-		   <button
-		         onClick={downloadAsExcel}
-		         style={{ marginTop: '1rem', marginLeft: '1rem' }}
-		       >
-		         Download as Excel
-		       </button>
-		   
-		   
+      <button
+        onClick={downloadAsPPT}
+        style={{ marginTop: '1rem', marginLeft: '1rem' }}
+      >
+        Download as PPT
+      </button>
+      <button
+        onClick={downloadAsExcel}
+        style={{ marginTop: '1rem', marginLeft: '1rem' }}
+      >
+        Download as Excel
+      </button>
     </div>
   );
 };

@@ -4,8 +4,7 @@ import Home from './components/Home';
 import Details from './components/Details';
 import Summary from './components/QEInitiatives/Summary';
 import ProjectROI from './components/ROI/ProjectROI';
-
-
+import ProjectLeadROIEntry from './components/ROI/ProjectLeadROIEntry';
 
 
 function App() {
@@ -13,10 +12,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/details/:value" element={<Details />} />
-	  <Route path="/summary" element={<Summary />} />
-	  <Route path="/ProjectROI" element={<ProjectROI />} />	
-				
-        {/* Uncomment the above line to enable Project ROI component */}
+	  <Route path="/QEInitiatives/Summary" element={<Summary />} />
+	  <Route path="/ROI/ProjectROI" element={<ProjectROI />} />
+	  <Route path="/ROI/ProjectLeadROIEntry/:intakeNumber" element={<ProjectLeadROIEntry />} />
+	  
     </Routes>
   );
 }

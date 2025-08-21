@@ -2,12 +2,14 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
 import mysql.connector
+#from pyarrow._flight import endpoints
+#import pyarrow.endpoints
 
 from SQL_Initiatives import (  
     GET_ALL_OPTIONS, GET_OPTION_BY_ID, UPDATE_OPTION,
     GET_ALL_INITIATIVES, UPDATE_INITIATIVE
 )
-#from pyarrow._flight import endpoints
+
 
 
 app = Flask(__name__)
@@ -22,7 +24,6 @@ def get_db_connection():
     conn = sqlite3.connect('database.db')
     conn.row_factory = sqlite3.Row
     return conn
-
 
 
 @app.route('/api/options', methods=['GET'])
@@ -89,25 +90,39 @@ def update_option():
 
 
 #INITIATIVES END POINTS    
-
+ 
 @app.route('/api/initiatives', methods=['GET'])
 def getInitiative_options():
-    """
-    Fetches all data from the QEInitiatives_Summary table.
-    Returns a JSON response with all rows.
-    """
     try:
         conn = get_db_connection()
-        rows = conn.execute(GET_ALL_INITIATIVES).fetchall()
+        rows = conn.execute("SELECT * FROM QEInitiatives_Summary").fetchall()
         conn.close()
+        
+         # Get available keys in the first row
+        available_keys = rows[0].keys()
+        print("Available keys in QEInitiatives_Summary:", available_keys)
+        
         if not rows:
-            return jsonify({'message': 'No data found'}), 404
-        return jsonify([dict(row) for row in rows])  # Convert rows to JSON
+            return jsonify({'initiatives': []}), 200
+        initiatives = []
+        for row in rows:
+            initiatives.append({
+                "InitiativeName": row["IniName"] if "IniName" in available_keys else "",
+                "InitiativeDescription": row["InitiativeDescription"] if "InitiativeDescription" in available_keys else "",
+                "InitiativeStatus": row["InitiativeStatus"] if "InitiativeStatus" in available_keys else "",
+                "InitiativeCommentary": row["InitiativeCommentary"] if "InitiativeCommentary" in available_keys else "",
+                "InitiativeID": row["InitiativeID"] if "InitiativeID" in available_keys else None,
+                "CumulativeROI": row["CumulativeROI"] if "CumulativeROI" in available_keys else ""
+            })
+        return jsonify({"initiatives": initiatives})
+    
     except Exception as e:
         print(f"Error fetching initiatives: {e}")
         return jsonify({'error': 'Failed to fetch initiatives'}), 500
-
-
+    
+    
+    
+    
 @app.route('/api/updateInitiatives', methods=['POST'])
 def updateInitiative_options():
     """
@@ -116,16 +131,18 @@ def updateInitiative_options():
     """
     data = request.json.get('initiatives', [])
     conn = get_db_connection()
+    
     cursor = conn.cursor()
 
     for initiative in data:
         cursor.execute(UPDATE_INITIATIVE, (
-            initiative['InitiativeName'],
+            initiative['IniName'],
             initiative['InitiativeDescription'],
             initiative['InitiativeStatus'],
             initiative['InitiativeCommentary'],
+            initiative['CumulativeROI'],
             #initiative['id']
-            initiative['InitiativeID']  # Use InitiativeId as the p
+            #initiative['InitiativeID']  # Use InitiativeId as the p
         ))
 
     conn.commit()
@@ -136,16 +153,17 @@ def updateInitiative_options():
 #PROJECT ROI END POINTS
 
 
-@app.route('/api/projectroi/<int:project_id>', methods=['GET'])
-def getProjectROI(project_id):
+@app.route('/api/projectroi/<int:intake_number>', methods=['GET'])
+def getProjectROI(intake_number):
     """
-    Fetch ROI data for a given project_id from projectroi table.
+    Fetch ROI data for a given intake_number from projectroi table.
     """
     try:
         conn = get_db_connection()
+        
         cursor = conn.cursor()
         query = "SELECT * FROM projectroi WHERE intake_number = ?"
-        rows = cursor.execute(query, (project_id,)).fetchall()
+        rows = cursor.execute(query, (intake_number,)).fetchall()
         conn.close()
         if not rows:
             return jsonify({'message': 'No ROI data found for this project'}), 404
@@ -163,18 +181,16 @@ def updateProjectROI():
     """
     try:
         data = request.json
-        project_id = data.get('project_id')
+        intake_number = data.get('intake_number')
 
         conn = get_db_connection()
         cursor = conn.cursor()
 
         update_query = """
-        UPDATE projectroi
-        SET FY = ?, ROIReportingQr = ?, ROIReportingMonth = ?, Portfolio = ?,
-            Application = ?, Amount = ?, AutomationFramework = ?, TransformationInitiative = ?,
-            FP = ?, DealCount = ?, TestCaseDesign = ?, TestUpdated = ?, TestCaseExecuted = ?,
-            ROISheet = ?, Lead = ?, Comment = ?
-        WHERE project_id = ?
+        INSERT INTO projectroi (
+        FY,ROIReportingQr,ROIReportingMonth,Portfolio,Application,Amount,AutomationFramework,TransformationInitiative,FP,DealCount,TestCaseDesign,TestUpdated,TestCaseExecuted,ROISheet,Lead,Comment,intake_number
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
 
         cursor.execute(update_query, (
@@ -194,7 +210,7 @@ def updateProjectROI():
             data.get('ROISheet'),
             data.get('Lead'),
             data.get('Comment'),
-            project_id
+            intake_number
         ))
 
         conn.commit()
@@ -211,30 +227,138 @@ def updateProjectROI():
 
 
 
-@app.route('/api/projects', methods=['GET'])
-def get_projects():
+@app.route('/api/projects/search', methods=['GET'])
+def search_projects():
     """
     Fetch all projects from 'projects' table (intake_number + intake_name).
     """
     try:
+        
+        #query = "SELECT intake_number, intake_name,  FROM Project"
+        query = request.args.get('query', '')
+        if not query or len(query) < 3:
+            return jsonify([])
+    
         conn = get_db_connection()
         cursor = conn.cursor()
-        query = "SELECT intake_number, intake_name FROM projects"
-        rows = cursor.execute(query).fetchall()
+        
+        #query = "SELECT * FROM Project"
+        sql = """
+        SELECT intake_number, intake_name
+        FROM Project
+        WHERE intake_number LIKE ? OR intake_name LIKE ?
+        LIMIT 10
+        """
+    
+        like_query = f"%{query}%"
+        rows = cursor.execute(sql, (like_query, like_query)).fetchall()
         conn.close()
+        return jsonify([dict(row) for row in rows])
+        #print(jsonify([dict(row) for row in rows]))
+        #rows = cursor.execute(query).fetchall()
+        #conn.close()
 
         if not rows:
             return jsonify({'message': 'No projects found'}), 404
 
         # Convert rows to JSON list of dicts
-        project_list = [dict(row) for row in rows]
-        return jsonify(project_list)
+        #project_list = [dict(row) for row in rows]
+        #return jsonify(project_list)
 
     except Exception as e:
         print(f"Error fetching projects: {e}")
         return jsonify({'error': 'Failed to fetch projects'}), 500
 
 
+@app.route('/api/projects/<string:intake_number>', methods=['GET'])
+def get_project_details(intake_number):
+    """
+    Fetch details for a single project by intake_number.
+    Called when 'Go' is clicked on frontend.
+    """
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        sql = "SELECT * FROM Project WHERE intake_number = ?"
+        row = cursor.execute(sql, (intake_number,)).fetchone()
+        conn.close()
+        if not row:
+            return jsonify({'message': 'Project not found'}), 404
+        return jsonify(dict(row))
+    except Exception as e:
+        print(f"Error fetching project details: {e}")
+        return jsonify({'error': 'Failed to fetch project details'}), 500
+    
 
+
+
+
+
+#PROJECT ROI ENTRY CODE
+
+@app.route('/api/projectroientry', methods=['POST'])
+def save_project_roi_entry():
+    """
+    Save one or more Project ROI Entry rows into ProjectROIEntry table.
+    Expects a JSON payload with a list of rows.
+    """
+    try:
+        data = request.json.get('entries', [])
+        if not data:
+            return jsonify({'status': 'fail', 'message': 'No data provided'}), 400
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        insert_query = """
+        INSERT INTO ProjectROIEntry (
+            intake_number,
+            Release,
+            ROIMonth,
+            SavingsCategory,
+            AutomationFmk,
+            TotalTCsCount,
+            ManualTCsPD,
+            AutomatedTCCreatedPD,
+            NumberofCycles,
+            ProjectName,
+            AutomationLead
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """
+
+        for entry in data:
+            cursor.execute(insert_query, (
+                entry.get('intake_number'),
+                entry.get('Release'),
+                entry.get('ROIMonth'),
+                entry.get('SavingsCategory'),
+                entry.get('AutomationFmk'),
+                entry.get('TotalTCsCount'),
+                entry.get('ManualTCsPD'),
+                entry.get('AutomatedTCCreatedPD'),
+                entry.get('NumberofCycles'),
+                entry.get('ProjectName'),
+                entry.get('AutomationLead')
+            ))
+
+        conn.commit()
+        conn.close()
+        return jsonify({'status': 'success', 'message': 'Entries saved successfully'}), 201
+    except Exception as e:
+        print(f"Error saving Project ROI Entry: {e}")
+        return jsonify({'error': 'Failed to save entries'}), 500
+
+
+    
+#ALM CONNECTOR 
+@app.route('/api/fetch_tc_count', methods=['GET'])
+def get_tc_count():
+    query = request.args.get("query", "")
+    result = fetch_tc_count(query)
+    return jsonify(result)
+
+
+   
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(debug=False, threaded=True)

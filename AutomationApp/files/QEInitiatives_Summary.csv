@@ -1,0 +1,6 @@
+InitiativeName,InitiativeDescription,InitiativeStatus,InitiativeCommentary,InitiativeID,CumulativeROI
+Kumaran,desc111,status111,comm111,5,600
+FF,desc2,status2,comm2,4,500
+MM,desc3,status3,comm3,3,400
+AI,desc4,status4,comm4,2,300
+Dashboard,desc5,status5,comm5,1,200
