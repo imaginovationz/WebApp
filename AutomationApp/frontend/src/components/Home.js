@@ -71,7 +71,7 @@ function Home() {
     <div style={{ padding: '2rem' }}> 
 	
     
-	  <h2>Select an Option - Last update (Oct 21 - 8 PM)</h2> 
+	  <h2>Select an Option - Last update (Oct 21 - 9 PM)</h2> 
     
       <button onClick={handleProjectForm} style={{ marginLeft: '1rem' }}>Fresh Intake Entry</button>
       <button onClick={ProjectROI} style={{ marginLeft: '1rem' }}>Project Updates</button>
