@@ -1,0 +1,475 @@
+/* ====== Professional Dashboard Styling ====== */
+:root{
+  --bg: #0b1020;
+  --card-bg: #0f162a;
+  --card-elev: rgba(255,255,255,.06);
+  --ring: #60a5fa;
+  --text: #e5e7eb;
+  --muted: #a5b4fc;
+  --accent: #38bdf8;
+  --accent-2: #22d3ee;
+  --border: #1f2a44;
+  --success: #10b981;
+  --amber: #f59e0b;
+  --rose: #fb7185;
+}
+
+/* Page container */
+.dashboard-container{
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 18px 18px 28px;
+}
+
+/* Header */
+
+.dash-header{
+  position: relative;
+  text-align: center;
+  margin-bottom: 14px;
+  padding: 28px 22px;
+  border-radius: 18px;
+
+  /* richer layered background */
+  background:
+    radial-gradient(1200px 400px at 50% -20%, rgba(56,189,248,.25), transparent 60%),
+    radial-gradient(1000px 320px at 100% -40%, rgba(34,211,238,.18), transparent 65%),
+    linear-gradient(180deg, rgba(14,23,42,.75), rgba(14,23,42,.35));
+
+  border: 1px solid rgba(96,165,250,.35);
+  box-shadow:
+    0 18px 48px rgba(2,6,23,.55),
+    0 8px 24px rgba(14,165,233,.25),
+    0 1px 0 rgba(255,255,255,.08) inset;
+
+  backdrop-filter: blur(4px) saturate(120%);
+  overflow: hidden;
+}
+
+.dash-header::before{
+  content:"";
+  position:absolute;
+  inset:-40% -60% auto -60%;
+  height: 220%;
+  background: linear-gradient(120deg,
+    transparent 15%, rgba(255,255,255,.08) 30%,
+    rgba(255,255,255,.18) 50%,
+    rgba(255,255,255,.08) 70%, transparent 85%);
+  transform: translateX(-40%);
+  animation: dashSheen 6s linear infinite;
+  pointer-events: none;
+}
+
+
+/* soft radial glow behind text */
+.dash-header::after{
+  content:"";
+  position:absolute;
+  left: 50%; top: 50%;
+  width: 70%; height: 140%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center,
+    rgba(59,130,246,.18), rgba(34,211,238,.10) 45%, transparent 70%);
+  filter: blur(16px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.dash-title{
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 32px;           /* up a notch */
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: .4px;
+
+  color: #0f172a;            /* slate-900 (darker ink) */
+  -webkit-text-stroke: 0.6px rgba(255,255,255,.65);  /* crisp edge on glow bg */
+  text-shadow:
+    0 2px 2px rgba(0,0,0,.25),
+    0 10px 24px rgba(2,6,23,.45);
+}
+
+/* decorative gradient underline */
+.dash-title::after{
+  content:"";
+  display:block;
+  width: 220px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22d3ee, #60a5fa);
+  box-shadow:
+    0 2px 12px rgba(34,211,238,.45),
+    0 2px 18px rgba(96,165,250,.40);
+}
+
+/* SUBTITLE — darker for legibility + slight glow */
+.dash-sub{
+  position: relative;
+  z-index: 1;
+  margin: 10px 0 0;
+  color: #334155;            /* slate-700 (darker) */
+  font-weight: 700;
+  letter-spacing: .25px;
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+
+
+@keyframes dashSheen{
+  0%   { transform: translateX(-60%) rotate(0.001deg); opacity:.6; }
+  50%  { transform: translateX(60%)  rotate(0.001deg); opacity:.85;}
+  100% { transform: translateX(160%) rotate(0.001deg); opacity:.6; }
+}
+
+/* Filter section (cards) */
+.filter-section{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+@media (min-width: 920px){
+  .filter-section{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.filter-card{
+  background: var(--card-bg);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 8px 28px rgba(0,0,0,.25),
+    0 1px 0 var(--card-elev) inset;
+  padding: 14px 14px 16px;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .12s ease;
+}
+.filter-card:hover{
+  border-color: rgba(96,165,250,.55);
+  box-shadow:
+    0 10px 36px rgba(2,132,199,.25),
+    0 1px 0 rgba(255,255,255,.08) inset;
+  transform: translateY(-1px);
+}
+.filter-card__title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: .2px;
+  margin-bottom: 10px;
+}
+.dot{
+  width: 9px; height: 9px; border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.05);
+}
+.dot-blue{ background: #60a5fa; }
+.dot-amber{ background: #fbbf24; }
+
+.filter-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Fancy select (animated, exquisite) */
+.select-wrap{
+  position: relative;
+  display: inline-block;
+}
+.select-wrap::after{
+  content: "";
+  position: absolute;
+  right: 12px; top: 50%;
+  width: 10px; height: 10px;
+  border-right: 2px solid #93c5fd;
+  border-bottom: 2px solid #93c5fd;
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.select-wrap:focus-within::after{
+  transform: translateY(-50%) rotate(225deg);
+  border-color: #fff;
+}
+.select-wrap::before{
+  /* floating label */
+  content: attr(data-label);
+  position: absolute;
+  left: 10px; top: -9px;
+  font-size: 12px;
+  padding: 0 6px;
+  border-radius: 8px;
+  color: #c7d2fe;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+/* base select (kept for compatibility) */
+.select-red{
+  appearance: none;
+  border: 1px solid #334155;        /* slate-700 */
+  border-radius: 10px;
+  background: rgba(2,6,23,.35);
+  color: var(--text);
+  padding: 10px 44px 10px 12px;      /* space for caret */
+  min-height: 40px;
+  min-width: 260px;
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease, background .18s ease, transform .08s ease;
+  box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 3px 14px rgba(0,0,0,.15) inset;
+}
+.select-red.wide{ min-width: 360px; }
+.select-red:hover{
+  border-color: #60a5fa;
+  background: rgba(2,6,23,.48);
+}
+.select-red:focus{
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px rgba(96,165,250,.25);
+  transform: translateY(-1px);
+}
+
+/* Go button (retain classes, enhance visuals) */
+.go-btn{
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: #0b1020;
+  background: linear-gradient(180deg, #34d399, #10b981);
+  border: 1px solid #0ea5a6;
+  box-shadow:
+    0 6px 18px rgba(16,185,129,.35),
+    0 1px 0 rgba(255,255,255,.15) inset;
+  transition: transform .08s ease, box-shadow .18s ease, filter .12s ease;
+}
+.go-btn:hover:enabled{
+  filter: brightness(1.02);
+  transform: translateY(-1px);
+  box-shadow:
+    0 10px 24px rgba(16,185,129,.45),
+    0 1px 0 rgba(255,255,255,.2) inset;
+}
+.go-btn:disabled{
+  opacity: .6;
+  filter: grayscale(.2);
+}
+
+/* Tabs bar & panel (compatible with existing .tabs/.roi-tab) */
+.tabs{
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #1e293b; /* slate-800 */
+  padding-bottom: 6px;
+  margin-top: 14px;
+}
+.roi-tab{
+  padding: 9px 16px;
+  border: 1px solid #26334a;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  background: #0b1224;
+  color: #cbd5e1;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .12s ease, background .18s ease, transform .06s ease, box-shadow .18s ease;
+  box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+}
+.roi-tab:hover{ filter: brightness(1.03); transform: translateY(-1px); }
+.tabs + .tab-panel{
+  border: 1px solid #26334a;
+  border-radius: 0 14px 14px 14px;
+  background: rgba(2,6,23,.35);
+  padding: 16px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25),
+    0 1px 0 rgba(255,255,255,.06) inset;
+}
+
+/* Keep per-tab colors already defined in roiTabs.css; add hrs variant if needed */
+.roi-tab.hrs { background:#1e1632; color:#e9d5ff; border-color:#3b2a5e; }
+.roi-tab.hrs.active { background:#5b21b6; color:#fff; border-color:#3b0764; }
+
+/* Accessibility tweaks */
+select:focus-visible,
+button:focus-visible {
+  outline: 2px dashed rgba(96,165,250,.9);
+  outline-offset: 2px;
+}
+
+/* Small helpers */
+.muted { color: #94a3b8; }
+.spacer-sm{ height: 8px; }
+.spacer-md{ height: 14px; }
+
+
+/* ================================
+   [PH1-CSS] Top-row 3-up layout
+   Make Consolidated / Releases / Project cards sit side-by-side
+   ================================ */
+
+/* Let cards from consecutive sections flow together horizontally */
+.filter-card {
+  float: left;                 /* [PH1-CSS] line-up horizontally */
+  width: 33.333%;              /* [PH1-CSS] 3-up layout */
+  box-sizing: border-box;      /* [PH1-CSS] padding won't break width */
+  padding-right: 12px;         /* [PH1-CSS] gutter */
+  /* Keep your existing visual styles (borders, radius, bg) unchanged */
+}
+
+/* Remove right gutter on each 3rd card */
+.filter-card:nth-of-type(3n) {
+  padding-right: 0;            /* [PH1-CSS] clean edge on the row */
+}
+
+/* Ensure following content (tabs, panels) starts below the floated cards */
+.tabs,
+.tab-panel {
+  clear: both;                 /* [PH1-CSS] avoid overlap with floats */
+}
+
+/* Optional: contain floats at the container level too */
+.dashboard-container::after {
+  content: "";
+  display: block;
+  clear: both;                 /* [PH1-CSS] clearfix safety */
+}
+
+/* Responsive fallbacks */
+@media (max-width: 1280px) {
+  .filter-card {
+    width: 50%;                /* [PH1-CSS] 2-up on medium screens */
+  }
+  .filter-card:nth-of-type(2n) {
+    padding-right: 0;          /* [PH1-CSS] clean edge on 2-up */
+  }
+}
+
+@media (max-width: 800px) {
+  .filter-card {
+    width: 100%;               /* [PH1-CSS] stack on small screens */
+    padding-right: 0;
+  }
+}
+
+/* ================================
+   [PH1-CSS2] One-row 3-up layout for top filters
+   ================================ */
+.top-row-3up {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  column-gap: 12px;
+  row-gap: 0;
+  align-items: stretch;
+}
+
+/* Let the section wrappers get out of the way so their .filter-card children
+   become direct grid items and can align across sections. */
+.top-row-3up > .filter-section {
+  display: contents; /* [PH1-CSS2] allows cards from both sections to share one grid row */
+}
+
+/* Reset any previous float/width hacks so cards flow in the grid cleanly */
+.top-row-3up .filter-card {
+  float: none;        /* [PH1-CSS2] override older float rule */
+  width: auto;        /* [PH1-CSS2] grid controls width */
+  padding-right: 0;   /* [PH1-CSS2] grid gap provides gutters */
+  box-sizing: border-box;
+}
+
+/* Ensure content below starts beneath the grid */
+.tabs, .tab-panel {
+  clear: both; /* harmless if no floats; keeps older pages safe */
+}
+
+/* Responsive: collapse to 2-up and 1-up as needed */
+@media (max-width: 1280px) {
+  .top-row-3up { grid-template-columns: repeat(2, minmax(280px, 1fr)); }
+}
+@media (max-width: 800px) {
+  .top-row-3up { grid-template-columns: 1fr; }
+}
+
+.hot-host {
+  height: 78vh;              /* match your page layout */
+  max-width: 100%;
+  overflow: auto;            /* scrollbars instead of spilling out */
+  border: 1px solid #26334a;
+  border-radius: 12px;
+  background: #0f162a;
+}
+
+/* Make sure table respects the container width */
+.hot-host .handsontable {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.roi-tab.active {
+  background: #e0f2fe;           /* light sky blue */
+  color: #0b1020;                /* readable dark text */
+  border-color: #7dd3fc;
+  box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 6px 14px rgba(125,211,252,.25);
+}
+
+.link-chip {
+  appearance: none;
+  border: 1px solid #7dd3fc;
+  background: #0b1224;
+  color: #e0f2fe;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .18s ease, background .18s ease;
+}
+.link-chip:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(125,211,252,.18); }
+.link-chip:active { transform: translateY(0); }
+
+.btn-compact {
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 700;
+  color: #0b1020;
+  background: linear-gradient(180deg,#bae6fd,#7dd3fc);
+  border: 1px solid #38bdf8;
+  box-shadow: 0 4px 12px rgba(56,189,248,.35), 0 1px 0 rgba(255,255,255,.15) inset;
+}
+.btn-compact:hover { filter: brightness(1.02); transform: translateY(-1px); }
+
+.qe-card{
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(15,22,42,.85), rgba(11,18,36,.85));
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 14px 36px rgba(2,6,23,.45), 0 1px 0 rgba(255,255,255,.06) inset;
+}
+
+.status-banner{
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  display: flex; align-items: center; gap: 8px;
+}
+.status-banner.info{
+  background: rgba(96,165,250,.12);
+  color: #e0f2fe;
+  border: 1px solid rgba(96,165,250,.45);
+}
+.status-banner.error{
+  background: rgba(248,113,113,.12);
+  color: #fecaca;
+  border: 1px solid rgba(248,113,113,.45);
+}
+.top-row-3up .consolidated-panel {
+  grid-column: 1 / -1;   /* full width under Consolidated Views card */
+  display: block;
+}
+

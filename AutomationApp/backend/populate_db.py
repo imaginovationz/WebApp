@@ -1,23 +1,18 @@
-"""
-This script initializes and populates the SQLite database (`database.db`) with sample data.
-
-- Creates a table named `options` if it does not already exist.
-- Clears any existing data in the `options` table.
-- Inserts predefined options into the `options` table.
-
-Usage:
-Run this script to reset and populate the database with default values.
-"""
-
 import sqlite3
+import csv
 
 conn = sqlite3.connect('database.db')
-conn.execute('CREATE TABLE IF NOT EXISTS options (id INTEGER PRIMARY KEY, name TEXT)')
-conn.execute("DELETE FROM options")
-conn.executemany('INSERT INTO options (name) VALUES (?)', [
-    ('Option A',),
-    ('Option B',),
-    ('Option C',)
-])
+cursor = conn.cursor()
+
+# Correct file path: 'files/projects.csv' (relative to root directory)
+with open('../files/projects.csv', 'r', newline='', encoding='utf-8') as f:
+    reader = csv.reader(f)
+    # Optionally skip header row if CSV has headers
+    next(reader, None)
+    for row in reader:
+        cursor.execute(
+            'INSERT INTO projects VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            row
+        )  # Adjust table name and number of placeholders to match your table
 conn.commit()
 conn.close()

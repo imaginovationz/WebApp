@@ -1,0 +1,146 @@
+Exception on /projects [GET]
+Traceback (most recent call last):
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\nigam\Development_workspaces\AutomationWebApp_New\AutomationWebApp\backend\app\routes.py", line 252, in get_projects
+    result = db.session.execute('SELECT * FROM projects')
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\scoping.py", line 779, in execute
+    return self._proxied.execute(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2149, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+        element, argname=argname, **kw
+    )
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+    ...<7 lines>...
+    ) from err
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT * FROM projects' should be explicitly declared as text('SELECT * FROM projects')
+Request GET /releases took 0.41 seconds
+Request GET /resources took 0.54 seconds
+Request GET /applications took 0.64 seconds
+Request GET /projects took 1.00 seconds
+Session closed for request: GET /releases
+Session closed for request: GET /resources
+Session closed for request: GET /applications
+Session closed for request: GET /projects
+Exception during request teardown: Textual SQL expression 'SELECT * FROM releases' should be explicitly declared as text('SELECT * FROM releases')
+Exception during request teardown: Textual SQL expression 'SELECT name, info, locati...' should be explicitly declared as text('SELECT name, info, locati...')
+Exception during request teardown: Textual SQL expression 'SELECT * FROM application' should be explicitly declared as text('SELECT * FROM application')
+Exception during request teardown: Textual SQL expression 'SELECT * FROM projects' should be explicitly declared as text('SELECT * FROM projects')
+Request OPTIONS /login took 0.00 seconds
+Session closed for request: OPTIONS /login
+Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\nigam\Development_workspaces\AutomationWebApp_New\AutomationWebApp\backend\app\routes.py", line 93, in login
+    result = db.session.execute("SELECT * FROM resources WHERE userid = :userid and password =:password", {'userid': userid, 'password': password})
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\scoping.py", line 779, in execute
+    return self._proxied.execute(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\session.py", line 2149, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+        element, argname=argname, **kw
+    )
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+  File "C:\Users\nigam\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+    ...<7 lines>...
+    ) from err
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT * FROM resources W...' should be explicitly declared as text('SELECT * FROM resources W...')
+Request POST /login took 0.06 seconds
+Session closed for request: POST /login
+Exception during request teardown: Textual SQL expression 'SELECT * FROM resources W...' should be explicitly declared as text('SELECT * FROM resources W...')
+Automation Portal startup
+Request GET /user_role took 0.21 seconds
+Session closed for request: GET /user_role
+Automation Portal startup
+Automation Portal startup
+Request GET /user_role took 0.24 seconds
+Session closed for request: GET /user_role
+Automation Portal startup
+Automation Portal startup
+Automation Portal startup
+Request GET /user_role took 0.28 seconds
+Session closed for request: GET /user_role
+Automation Portal startup
+Automation Portal startup
+Automation Portal startup
+Request GET /user_role took 0.97 seconds
+Session closed for request: GET /user_role
+Request GET /user_role took 0.86 seconds
+Session closed for request: GET /user_role
+Automation Portal startup
+Request GET /user_role took 0.27 seconds
+Session closed for request: GET /user_role
+Automation Portal startup
+Request GET /user_role took 0.82 seconds
+Session closed for request: GET /user_role

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import "../styles/RecordEntry.css";
+import "../styles/roiTabs.css";
+
 
 function Details() { // Declares a functional component named Details that will display and allow editing of a selected option's details.
 	

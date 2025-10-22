@@ -1,0 +1,170 @@
+/* Tab bar */
+.roi-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 12px;
+}
+.roi-tab {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  background: #f9fafb;
+  color: #374151;
+  text-decoration: none;
+}
+.roi-tab.active,
+.roi-tab[aria-current="page"] {
+  background: #ffffff;
+  font-weight: 600;
+}
+
+/* Tab panel container */
+.roi-tab-panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 0 8px 8px 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+/* Section + grid */
+.tab-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tab-section {
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.tab-section-yellow { background: #fff59d; }  /* Excel Yellow */
+.tab-label { font-size: 0.9rem; }
+
+/* Light green labels (fields inside a section) */
+.tab-label-green { color: #2e7d32; }
+
+/* Computed (orange) labels */
+.tab-label-orange { color: #ef6c00; }
+
+/* Inputs */
+.tab-input {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+/* Light blue = fetched values (disabled) */
+.tab-input-blue {
+  background: #e0f2fe;
+}
+
+/* Orange computed */
+.tab-input-orange {
+  background: #ffecb3;
+}
+
+/* Two-column grid for label/value pairs */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 10px 12px;
+}
+
+
+
+
+.info-icon{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:16px; height:16px; border-radius:50%;
+  font-size:11px; line-height:1; font-weight:600;
+  color:#0f172a; background:#e2e8f0; cursor:help;
+}
+.info-icon:hover{ filter: brightness(0.95); }
+
+
+ .tab-input-orange {
+   background: #ffecb3;
+ }
+
+ .grid-2 {
+   display: grid;
+   grid-template-columns: 260px 1fr;
+   gap: 10px 12px;
+ }
+
+ .roi-tab.hrs {
+  background-color: #7c3aed;   /* violet */
+  border-color: #6d28d9;
+  color: #fff;
+}
+
+.roi-tab.hrs.active {
+  background-color: #5b21b6;
+  border-bottom: 3px solid #3b0764;
+}
+
+/* : compact Add/Delete buttons (distinct from other buttons) */
+.btn-compact {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 4px 8px;           /* smaller for compact UI */
+  font-size: 0.85rem;         /* smaller text */
+  line-height: 1.1;
+  cursor: pointer;
+  transition: transform 0.05s ease, opacity 0.2s ease;
+}
+.btn-compact:active { transform: translateY(1px); }
+.btn-compact[disabled] { opacity: 0.5; cursor: not-allowed; }
+.btn-compact.btn-add {
+  background: #16a34a;        /* green */
+  color: #fff;
+}
+.btn-compact.btn-add:hover { filter: brightness(0.95); }
+.btn-compact.btn-del {
+  background: #dc2626;        /* red */
+  color: #fff;
+}
+.btn-compact.btn-del:hover { filter: brightness(0.95); }
+
+/* zebra table */
+.zebra-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.zebra-table thead th {
+  background: #f3f4f6;              /* subtle header */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.zebra-table th,
+.zebra-table td {
+  border: 1px solid #e5e7eb;        /* light borders */
+  padding: 8px 10px;
+  vertical-align: top;
+}
+.zebra-table tbody tr:nth-child(odd)  { background: #fafafa; }
+.zebra-table tbody tr:nth-child(even) { background: #ffffff; }
+
+/* inline deliverables layout: 4 per row, wraps on small screens */
+.qe-deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 14px;
+}
+@media (max-width: 1024px) {
+  .qe-deliverables-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .qe-deliverables-grid { grid-template-columns: 1fr; }
+}
+.qe-deliverable {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #374151;
+}

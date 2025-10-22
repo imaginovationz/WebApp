@@ -1,0 +1,137 @@
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.table th, .table td {
+  border: 0.5px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
+  z-index: 0;
+}
+
+.freeze-columns-4 th:nth-child(1),
+.freeze-columns-4 td:nth-child(1) {
+    position: sticky;
+    right: -20px;
+    left:  -5px;
+    background-color: #fff;
+    z-index: 21;
+}
+
+.freeze-columns-4 th:nth-child(2),
+.freeze-columns-4 td:nth-child(2) {
+    position: sticky;
+    left: 50px; /* Adjust based on the width of the first column */
+    background-color: #fff;
+    z-index: 1;
+}
+
+.freeze-columns-4 th:nth-child(3),
+.freeze-columns-4 td:nth-child(3) {
+  position: sticky;
+  left: 180px; 
+  background-color: #fff;
+  z-index: 1;
+}
+
+
+.freeze-columns-4 th:nth-child(4),
+.freeze-columns-4 td:nth-child(4) {
+  position: sticky;
+  left: 250px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.freeze-header th {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 3;
+}
+
+
+.highlight-cell-green {
+  background-color: #d4edda;
+}
+
+.highlight-cell-red {
+  background-color: #f8d7da;
+}
+
+.editable-input {
+
+  border: none;
+  background: white;
+  font-size: small;
+  text-align: right; 
+}
+
+.updated-cell {
+  font-weight: bold;
+}
+
+.highlight-cell-blue {
+  background-color: #cce5ff;
+}
+
+/* Modal overlay for login/password */
+.password-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.password-modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.password-modal label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.password-modal input[type="text"],
+.password-modal input[type="password"] {
+  padding: 0.5rem;
+  border: 0.5px solid #000000;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.password-modal button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: #005bb5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.password-modal button:hover {
+  background: #005bb5;
+}

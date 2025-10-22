@@ -1,0 +1,19 @@
+{
+  "port": 3001,
+  "alm_port": 3002,
+  "mmtg_parser_port": 3003,
+  "jenkins_port": 3004,
+  "functional_backend_port": 3006,
+  "debug": true,
+  "alm_url":"https://alm.cibc.com:8443/qcbin",
+  
+  "mlidt_api_key":"apikey-dasqghplasfaosbsmtqt",
+  "mlidt_secret_key":"dbokdgeohhgkngki",
+  "rbss_api_key":"apikey-hapccmolaefmpbnmtigb",
+  "rbss_secret_key":"lefmmmlnldpohghk",
+  "jenkins_username":"arvind.yadav1@cibc.com",
+  "jenkins_token":"113a8cf122992748df34532094419b85fd",
+
+  "github_token":"ghp_50Bd6wwAaVeoKK7iTJjXfojuBdrizs49CJkA"
+
+}

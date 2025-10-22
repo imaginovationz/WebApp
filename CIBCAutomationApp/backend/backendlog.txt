@@ -1,0 +1,151 @@
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Pragyesh Pandey --- CIBC_FTE
+Pragyesh Pandey --- CIBC_FTE
+Pragyesh Pandey --- CIBC_FTE
+Ronak Shetty --- QC_T_CON_TATA_On
+Naresh M --- QC_QUAL_AS_TATA_Off
+Ronak Shetty --- QC_T_CON_TATA_On
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Arvind Yadav --- CIBC_FTE
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Naresh M --- QC_QUAL_AS_TATA_Off
+Pragyesh Pandey --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Arvind Yadav --- CIBC_FTE
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Pragyesh Pandey --- CIBC_FTE
+Pragyesh Pandey --- CIBC_FTE
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Debasish Mohapatra --- QC_T_COORD_TATA_Off
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Ronak Shetty --- QC_T_CON_TATA_On
+Amit Nigam --- CIBC_FTE
+Amit Nigam --- CIBC_FTE

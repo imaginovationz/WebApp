@@ -1,0 +1,32 @@
+1] Generating email body for release status - weekly basis [as of Wednesday of that week]
+2] Deborah updates the DSR, release dashboard pulls data from these individual DSRs, 
+some data still needs to be updated manually like dates
+3] Add a project button
+4] Manually writing summary for each project [once email is generated]
+[DSR summary is big, we need to put a high level for executives]
+
+*****UI Changes*****
+[1] Consolidated View
+
+[C] We fetch the Data from the ALM by running several SQL running and display in POWERBI
+==Lets see for Basic Defects / Test Cases
+
+Let's use these reference files and build an App as per below.
+
+Step 1. User Selects Domain, ALM Project, and Project Value from a dropdown on UI and hit Go.
+
+Step 2. When Go is clicked, 
+Connect to ALM in the backend.
+
+#read alm api keys and alm url from backend/read_config.py which refers to backend/'almconfig.json'
+#We will use TDConnect OTA client to connect to ALM [Refer alm.py file to build the logic]
+
+Step 3. Once Connected, Run the Query to fetch data from ALM from the connected project
+#We will create a almapp.py file to define all the backend api end points to fetch the results from ALM based on the query [Refer app.py /PBFlask.py ] 
+#All ALM SQL queries will be a folder 'dql'. We will run the Query : dql/ALM_connection.sql
+#Once Data is fetched, we will pass on that data to the a PowerBI Report dynamically [Refer PBReactUI.js as a sample]
+
+Step 4. The Power Report should dynamically adjust the data based on the values passed and should be rendered on the UI.
+
+PowerBI Report Table
+

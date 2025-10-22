@@ -1,0 +1,27 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+#root { max-width: 100%; padding: 0; }
+body { overflow-x: auto; }
+
+
+.excel-modal-body {
+  background: #fff !important;
+  color: #111 !important;
+  border-radius: 8px;
+  padding: 8px;
+  height: 70vh;
+  min-height: 480px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+}
+.excel-modal-body .handsontable,
+.excel-modal-body .handsontable .htCore,
+.excel-modal-body .handsontable .htCore td,
+.excel-modal-body .handsontable .htCore th {
+  background: #fff !important;
+  color: #111 !important;
+}

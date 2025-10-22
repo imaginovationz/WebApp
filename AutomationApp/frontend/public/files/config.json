@@ -1,0 +1,17 @@
+{
+  "port": 3001,
+  "alm_port": 3002,
+  "mmtg_parser_port": 3003,
+  "jenkins_port": 3005,
+  "functional_backend_port": 3006,
+  "rag_port": 3013,
+  "debug": true,
+  "alm_url":"https://alm.cibc.com:8443/qcbin",
+  "mlidt_api_key":"",
+  "mlidt_secret_key":"",
+  "rbss_api_key":"",
+  "rbss_secret_key":"",
+  "jenkins_username":"",
+  "jenkins_token":"",
+  "github_token":""
+}

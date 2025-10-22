@@ -1,0 +1,13 @@
+.schema-index-wrapper {padding:2.5rem 2rem 3rem; font-family:"Segoe UI", Arial, sans-serif; background:#fafafa; min-height:100vh;}
+.schema-index-wrapper .index-header {display:flex; justify-content:space-between; align-items:center; max-width:900px; margin:0 auto 1.5rem;}
+.schema-index-wrapper .page-title {margin:0; font-size:2rem; font-weight:600; color:#8b0e2e;}
+.schema-index-wrapper .actions {display:flex; gap:.8rem;}
+.schema-index-wrapper .btn-link {text-decoration:none; background:#0b6fb8; border:1px solid #0b6fb8; color:#fff; font-weight:600; font-size:.85rem; padding:.55rem 1rem; border-radius:6px; letter-spacing:.3px; box-shadow:0 1px 2px rgba(0,0,0,0.08);} 
+.schema-index-wrapper .btn-link:hover {background:#0d7fcc; border-color:#0d7fcc;}
+.schema-index-wrapper .schema-index-list {list-style:none; margin:0 auto; padding:0; max-width:500px; display:flex; flex-direction:column; gap:.55rem;}
+.schema-index-wrapper .schema-index-list li {background:#fff; border:1px solid #e3e6eb; border-radius:8px; padding:.7rem 1rem; font-size:.95rem; box-shadow:0 1px 3px rgba(0,0,0,0.04);} 
+.schema-index-wrapper .schema-index-list li a {text-decoration:none; color:#0b6fb8; font-weight:600;}
+.schema-index-wrapper .schema-index-list li a:hover {text-decoration:underline;}
+.schema-index-wrapper .schema-index-list li.empty {text-align:center; font-style:italic; color:#555;}
+.schema-index-wrapper .status {text-align:center; font-size:.9rem; margin-top:1rem;}
+.schema-index-wrapper .status.error {color:#c53030;}

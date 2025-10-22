@@ -1,0 +1,59 @@
+Let's use these reference files attached and build a complete short application as per below 4 steps. 
+
+Step 1. User Selects Domain, ALM Project, and Project Value from a dropdown on UI and hit 'Go' button.
+[create a New .js page] 
+
+Step 2. When Go is clicked, 
+Connect to ALM in the backend.
+
+#read alm api keys and alm url from backend/read_config.py which refers to backend/'almconfig.json'. Both files are attached for reference building.
+#We will use TDConnect OTA client to connect to ALM [Refer alm.py file to build the logic]
+
+Step 3. Once Connected, Run the Query to fetch data from ALM from the connected project
+#We will create a almapp.py file to define all the backend api end points to fetch the results from ALM based on the query [Refer app.py file for reference] 
+#All ALM SQL queries files will be a folder 'dql'. Example we will run the Query : dql/ALM_connection.sql. File attached for reference
+#Once Data is fetched from the ALM query, we will pass on that data to the a PowerBI Report dynamically [Refer PBReactUI.js as a sample]
+
+Step 4. The Power Report should dynamically adjust the data based on the values passed and should be rendered on the UI.
+ChatGPT said:
+Thought for 17s
+
+***
+How each step is satisfied
+
+1. UI with dropdowns + Go button → ALMRunner.jsx page (new).
+
+2. Connect to ALM with OTA + config → /api/alm/connect in almapp.py calls 
+your existing DQLConnector (which reads keys/URL from read_config.py → config.json). 
+Nothing to re-enter in code; just populate your keys in the JSON. 
+
+3. Run query from /dql/*.sql → /api/alm/run_dql loads a file like ALM_connection.sql, 
+replaces <DB_NAME> and <SelectedReleaseID> when present, then executes via OTA (exactly how your existing app.py flow works). 
+
+4. Render Power BI dynamically → PBReactUI.js supports both quick iframe and (optional) SDK-based dynamic filters. 
+The React page passes reportData derived from the rows so you can map it to slicers/filters.
+
+############Run instructions
+
+Backend
+
+# From your backend folder
+# (Ensure your Windows host has ALM OTA/TDAPI registered and Python has pywin32)
+# Fill API keys in backend/config.json first.
+uvicorn backend.almapp:app --host 0.0.0.0 --port 3002 --timeout-keep-alive 45
+
+alm_port is already defined in your config & read by your code (3002 by default). 
+
+This reuses your OTA connector in alm.py. 
+
+Frontend
+
+1. Add route to your app (e.g., React Router) to render ALMRunner.jsx.
+
+2. Open the page, select Domain + ALM Project + Project Value, hit Go.
+
+3. You should see:
+
+“Connected” verified on backend
+Rows preview populated from your DQL
+Power BI report rendering (and later, filters once you switch to SDK mode)

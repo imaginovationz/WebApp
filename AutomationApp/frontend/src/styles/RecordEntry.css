@@ -1,0 +1,146 @@
+/**
+ * CBPT Portal - Modern Form Styling
+ * ================================
+ * A comprehensive stylesheet for modern form elements
+ *
+ * Color Scheme:
+ * - Primary: #C41F3E (CIBC Red)
+ * - Secondary: #0073e6 (Interactive Blue)
+ * - Background: #f9f9f9 (Light Gray)
+ * - Borders: #dce0e5 (Subtle Gray)
+ *
+ * Components:
+ * - Input fields
+ * - Dropdowns
+ * - Buttons
+ * - Labels
+ * - Form sections
+ */
+
+.form-page {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #BBBCBC;
+    color: #C41F3E;
+  }
+  
+  .form-type-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0 5px;
+  }
+  
+  .form-type-row label {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 8px;
+    margin: 10px 0 5px;
+  }
+  
+  .form-type-row select {
+    width: 20ch;  
+  }
+  
+  /* Modern Input and Select Fields */
+input, select {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  border: 1px solid #dce0e5;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #0073e6;
+  box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Enhanced Button Styling */
+button {
+  padding: 12px 24px;
+  background: linear-gradient(to bottom right, #0073e6, #0066cc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: linear-gradient(to bottom right, #0066cc, #005bb5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Modern Label Styling */
+label {
+  display: block;
+  margin: 12px 0 8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #444;
+  transition: color 0.2s ease;
+}
+
+label:hover {
+  color: #0073e6;
+}
+
+/* Enhanced Section Styling */
+.section {
+  border: 1px solid #dce0e5;
+  padding: 20px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sit1-section, .sit2-section, .uat-section {
+  border-color: #dce0e5;
+}
+
+/* Modern Date Range Styling */
+.date-range-wrapper input {
+  text-align: center;
+  border: 1px solid #dce0e5;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.date-range-wrapper input:focus {
+  border-color: #0073e6;
+  box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.15);
+}
+  
+  .date-range-wrapper input {
+    text-align: center; 
+    border: 2px solid #ccc; 
+    padding: 5px; 
+    border-radius: 4px; 
+  }
+
+  
