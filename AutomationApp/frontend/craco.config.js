@@ -1,52 +1,58 @@
-// craco.config.js (CRA v4 / Webpack 4)
+// craco.config.js (additions marked)
 const webpack = require("webpack");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
   webpack: {
-    // ⛔️ remove the 'alias' section entirely (especially 'chevrotain')
-    configure: (webpackConfig) => {
-      // 1) Remove any accidental "node:*" aliases
-      if (webpackConfig.resolve && webpackConfig.resolve.alias) {
-        const badKeys = Object.keys(webpackConfig.resolve.alias).filter((k) =>
-          k.startsWith("node:")
-        );
-        for (const k of badKeys) delete webpackConfig.resolve.alias[k];
-      }
-
-      // 2) Webpack 4 way to disable fs in the browser
-      webpackConfig.node = {
-        ...(webpackConfig.node || {}),
-        fs: "empty",
+    configure: (config) => {
+      // --- existing fallback/alias (keep yours) ---
+      config.resolve.fallback = {
+        ...(config.resolve.fallback || {}),
+        fs: false,
+        path: require.resolve("path-browserify"),
+        stream: require.resolve("stream-browserify"),
+        buffer: require.resolve("buffer/"),
+        http: require.resolve("stream-http"),
+        https: require.resolve("https-browserify"),
+        url: require.resolve("url/"),
+        zlib: require.resolve("browserify-zlib"),
+        assert: require.resolve("assert/"),
+        util: require.resolve("util/")
       };
 
-      // 3) Parse .mjs in node_modules correctly (needed for ESM deps)
-      webpackConfig.module = webpackConfig.module || {};
-      webpackConfig.module.rules = webpackConfig.module.rules || [];
-      const hasMjsRule = webpackConfig.module.rules.some(
-        (r) => String(r.test) === String(/\.mjs$/)
+      config.resolve.alias = {
+        ...(config.resolve.alias || {}),
+        "node:fs": false,
+        "node:path": require.resolve("path-browserify"),
+        "node:stream": require.resolve("stream-browserify"),
+        "node:buffer": require.resolve("buffer/"),
+        "node:http": require.resolve("stream-http"),
+        "node:https": require.resolve("https-browserify"),
+        "node:url": require.resolve("url/"),
+        "node:zlib": require.resolve("browserify-zlib"),
+        "node:assert": require.resolve("assert/"),
+        "node:util": require.resolve("util/")
+      };
+
+      config.plugins = config.plugins || [];
+
+      // [ADD THIS] Strip the "node:" scheme before Webpack tries to read it
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+          resource.request = resource.request.replace(/^node:/, "");
+        })
       );
-      if (!hasMjsRule) {
-        webpackConfig.module.rules.unshift({
-          test: /\.mjs$/,
-          include: /node_modules/,
-          type: "javascript/auto",
-        });
-      }
 
-      // 4) Prefer ESM entry points when available
-      webpackConfig.resolve = webpackConfig.resolve || {};
-      webpackConfig.resolve.mainFields = ["es2015", "module", "browser", "main"];
-
-      // 5) Provide globals expected by some libs (buffer/process)
-      webpackConfig.plugins = [
-        ...(webpackConfig.plugins || []),
+      // keep your existing plugins
+      config.plugins.push(
+        new NodePolyfillPlugin(),
         new webpack.ProvidePlugin({
           Buffer: ["buffer", "Buffer"],
-          process: ["process"],
-        }),
-      ];
+          process: "process/browser"
+        })
+      );
 
-      return webpackConfig;
-    },
-  },
+      return config;
+    }
+  }
 };

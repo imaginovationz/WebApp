@@ -13,7 +13,7 @@ import SummaryTab from './components/ROI/tabs/SummaryTab';
 import ProjectStatusTab from './components/ROI/tabs/ProjectStatusTab';
 import TestCaseCountTab from './components/ROI/tabs/TestCaseCountTab';
 
- import SavingsTabs from './components/ROI/tabs/SavingsTabs';
+import SavingsTabs from './components/ROI/tabs/SavingsTabs';
 import ProjectSavingsTab from './components/ROI/tabs/ProjectSavingsTab';
 import InitiativeSavingsTab from './components/ROI/tabs/InitiativeSavingsTab';
 
