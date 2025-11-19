@@ -1,0 +1,55 @@
+{
+  "openai": {
+    "api_type": "azure",
+    "api_base": "https://9747-dcane.openai.azure.com/",
+    "api_version": "2024-05-01-preview",
+    "embedding_api_version": "2023-05-15",
+    "embedding_deployment": "text-embedding-3-small",
+    "llm_deployment": "gpt-4.1",
+    "temperature": 0
+  },
+  "azure_credentials": {
+    "client_id": "0f3b8069-3a01-4a6b-b46c-4335a888deee",
+    "tenant_id": "c6e31356-f8e7-435e-a075-3a036ccade93",
+    "client_secret": "HNb8Q~ctDUzRV0rYSs.g.urI.xFQEtxUuhzxHaAU"
+  },
+  "security": {
+    "verify_ssl": false,
+    "ca_bundle": null
+  },
+  "vectorstore": {
+    "type": "faiss",
+    "k_results": 5,
+    "similarity_threshold": 0.8,
+    "storage_dir": "vector_storage"
+  },
+  "document": {
+    "supported_formats": [".docx", ".pdf", ".xlsx", ".xlsm", ".txt"],
+    "output_format": "xlsx",
+    "preserve_formatting": true
+  },
+  "processing": {
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "max_tokens": 4000
+  },
+  "paths": {
+    "input_directory": "docs",
+    "output_directory": "output",
+    "temp_directory": "temp"
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "rag.log",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "_comments": {
+    "azure_credentials": "Get these from your Azure App Registration",
+    "client_id": "Application (client) ID from Azure App Registration",
+    "tenant_id": "Directory (tenant) ID from Azure App Registration", 
+    "client_secret": "Client secret from Azure App Registration",
+    "api_base": "Your Azure OpenAI endpoint URL",
+    "embedding_deployment": "Name of your text-embedding deployment",
+    "llm_deployment": "Name of your GPT model deployment"
+  }
+}
