@@ -1,0 +1,150 @@
+body {
+  background-color: #fff; /* Set the background color to white */
+}
+
+.response {
+  margin-top: 20px;
+}
+
+.response pre {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.label-wide {
+  font-weight: bold;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Ensure equal spacing */
+  align-items: center;
+}
+
+.form-row label {
+  margin-right: 10px;
+}
+
+form {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff50;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row input, .form-row select {
+  flex: 1;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.form-page {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #ffffff; /* Ensure the background color is white */
+  color: #C41F3E;
+}
+
+.form-column {
+  flex: 0 0 48%;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #005bb5;
+}
+
+label-mmtg {
+  display: block;
+  margin: 5px 0 15px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 20px;
+}
+
+
+.logs-container {
+  height: 400px;
+  width: 90%;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5); /* Equivalent to #ffffff50 */
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin-top: 20px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0 auto; /* Center horizontally within the parent container */
+  color: rgb(26, 78, 250);
+}
+.select-small {
+  width: 70px; /* Explicitly set the width to fit approximately 7 characters */
+  padding: 5px; /* Adjust padding for better appearance */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.refresh-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.refresh-button:hover {
+  background-color: #0056b3;
+}
+
+.refresh-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.file-info {
+  margin-top: 5px;
+  padding: 5px;
+  background-color: #e7f3ff;
+  border-radius: 3px;
+  border-left: 3px solid #007bff;
+}
+
+.file-info small {
+  color: #333;
+  font-style: italic;
+}
+
+.loading-spinner {
+  margin-left: 10px;
+  color: #007bff;
+  font-style: italic;
+}
+
+.form-row-temp {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  padding: 6px !important;
+}

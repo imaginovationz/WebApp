@@ -1,0 +1,73 @@
+.ticker-container {
+  width: 100%;
+  background: #dc143c;
+  border-bottom: 2px solid rgba(220, 20, 60, 0.2);
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticker-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ticker-label {
+  flex-shrink: 0;
+  margin-left: 15px;
+  margin-right: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ticker-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-text {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  animation: scroll-left 45s linear infinite;
+  padding-left: 100%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.3px;
+  white-space: pre;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Add subtle hover effect */
+.ticker-container:hover {
+  background: #c41e3a;
+  transition: background 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .ticker-label {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+  
+  .ticker-text {
+    font-size: 0.85rem;
+    animation-duration: 35s;
+  }
+}
