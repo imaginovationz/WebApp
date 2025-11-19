@@ -1,0 +1,52 @@
+{
+  "uploads": [
+    {
+      "id": "upload_20250824_140914",
+      "filename": "E2E_Scenarios.xlsx",
+      "upload_date": "2025-08-24T14:09:14.005514",
+      "file_size": 27579,
+      "test_case_count": 0,
+      "file_type": ".xlsx",
+      "description": "ytest",
+      "tags": [
+        "13"
+      ],
+      "source": "manual_upload"
+    },
+    {
+      "id": "upload_20250824_142117",
+      "filename": "E4_EPIC37_TestCases_V0.3.xlsx",
+      "upload_date": "2025-08-24T14:21:17.869638",
+      "file_size": 228205,
+      "test_case_count": 0,
+      "file_type": ".xlsx",
+      "description": "test",
+      "tags": [],
+      "source": "manual_upload"
+    },
+    {
+      "id": "upload_20250825_230833",
+      "filename": "EPIC40US41_US42_US72_US73_US108_US109TestScenario_v0.2.xlsx",
+      "upload_date": "2025-08-25T23:08:33.423062",
+      "file_size": 215562,
+      "test_case_count": 0,
+      "file_type": ".xlsx",
+      "description": "",
+      "tags": [],
+      "source": "manual_upload"
+    },
+    {
+      "id": "upload_20250926_112415",
+      "filename": "HPP_PLC_Product_mMTG_LCMS_DM_CLASS_Excalibur_DDGS.docx",
+      "upload_date": "2025-09-26T11:24:15.929258",
+      "file_size": 261185,
+      "test_case_count": 1,
+      "file_type": ".docx",
+      "description": "PLC for DDGS and Excaliber",
+      "tags": [],
+      "source": "manual_upload"
+    }
+  ],
+  "total_test_cases": 1,
+  "last_updated": "2025-09-26T11:24:15.929275"
+}
