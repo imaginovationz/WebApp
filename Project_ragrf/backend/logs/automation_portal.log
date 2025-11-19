@@ -1,0 +1,82 @@
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Dynamic insert received raw payload for Set_ECIF_For_ECIF_Customer_Simulator_4114: {'Environment': 'SIT1', 'User Name': 'RP10090', 'Transit': '85823', 'ECIF_Number': '428073380'}
+Dynamic insert schema=Set_ECIF_For_ECIF_Customer_Simulator_4114 raw_keys=['Environment', 'User Name', 'Transit', 'ECIF_Number'] mapped_columns=['Environment', 'User_Name', 'Transit', 'ECIF_Number']
+Request POST /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.02 seconds
+Session closed for request: POST /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/50 took 0.00 seconds
+Session closed for request: OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/50
+Request DELETE /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/50 took 0.02 seconds
+Session closed for request: DELETE /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/50
+Request GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.01 seconds
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/51 took 0.00 seconds
+Session closed for request: OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/51
+Request DELETE /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/51 took 0.03 seconds
+Session closed for request: DELETE /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/51
+Request GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.01 seconds
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Dynamic insert received raw payload for Set_ECIF_For_ECIF_Customer_Simulator_4114: {'Environment': 'SIT1', 'User Name': 'RP10090', 'Transit': '85823', 'ECIF_Number': '3107776131'}
+Dynamic insert schema=Set_ECIF_For_ECIF_Customer_Simulator_4114 raw_keys=['Environment', 'User Name', 'Transit', 'ECIF_Number'] mapped_columns=['Environment', 'User_Name', 'Transit', 'ECIF_Number']
+Request POST /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.02 seconds
+Session closed for request: POST /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Automation Portal startup
+Automation Portal startup
+Request GET /user_role took 0.01 seconds
+Session closed for request: GET /user_role
+Request GET /intake_resource_allocations_monthly took 0.28 seconds
+Session closed for request: GET /intake_resource_allocations_monthly
+Automation Portal startup
+Request GET /user_role took 0.01 seconds
+Session closed for request: GET /user_role
+Request GET /intake_resource_allocations_monthly took 0.28 seconds
+Session closed for request: GET /intake_resource_allocations_monthly
+Request GET /resource_allocations_monthly took 0.09 seconds
+Session closed for request: GET /resource_allocations_monthly
+Request GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.02 seconds
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.02 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Dynamic insert received raw payload for Set_ECIF_For_ECIF_Customer_Simulator_4114: {'Environment': 'SIT1', 'User Name': 'RP10090', 'Transit': '85823', 'ECIF_Number': '439284382'}
+Dynamic insert schema=Set_ECIF_For_ECIF_Customer_Simulator_4114 raw_keys=['Environment', 'User Name', 'Transit', 'ECIF_Number'] mapped_columns=['Environment', 'User_Name', 'Transit', 'ECIF_Number']
+Request POST /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.02 seconds
+Session closed for request: POST /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/52 took 0.00 seconds
+Session closed for request: OPTIONS /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/52
+Request DELETE /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/52 took 0.01 seconds
+Session closed for request: DELETE /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114/52
+Request GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/schemas/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114 took 0.00 seconds
+Session closed for request: GET /ui/data/Set_ECIF_For_ECIF_Customer_Simulator_4114
+Request GET /user_role took 0.01 seconds
+Session closed for request: GET /user_role
